@@ -2,6 +2,7 @@
     position: relative;
     display: block;
     max-width: 100%;
+    filter: blur(5px);
 }
 .slogen-overlay{
   position: absolute;
@@ -13,6 +14,7 @@
   font-weight: bold;
   font-size: large;
 }
+
 .text-overlay{
   position: absolute;
   top: 77%;
@@ -38,6 +40,17 @@
   background-color: #000629;
   transform: scale(1.03);
 }
+
+.logo-overlay {
+  display: flexbox;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: middle;
+  background-color: #002e458c ;
+  width: 1000px;
+}
+
 @media(max-width:990px){
   .button-overlay{
     padding: 8px 16px;
@@ -102,9 +115,19 @@ footer{
   padding-top: 30px;
   padding-bottom: 20px;
 }
-.navbar{
-  background-color: #002e45;
+
+.navbar {
+  background-color: #002e458c ;
+  color: black;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.5s;
 }
+
+.navbar:hover{
+  background-color: #002e45;
+  color : white;
+}
+
 .hr-thiker{
   width: 250px;
   height: 2px;
@@ -125,6 +148,7 @@ footer{
   text-decoration: none;
   color:white;
 }
+
 .end-text{
   background-color: #002e45;
   font-size: smaller;
@@ -132,4 +156,8 @@ footer{
 .all-footer{
   display: flex;
   justify-content: center;
+}
+
+.set-width {
+  height:50%;
 }
