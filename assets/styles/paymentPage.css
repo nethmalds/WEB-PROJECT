@@ -1,0 +1,37 @@
+
+.container-xl {
+    margin-top: 100px;
+}
+
+.form-control {
+    border-radius: 10px;
+    border-color: aliceblue;
+    margin: 10px;
+}
+
+.Topic {
+    margin-left: 10px;
+}
+
+.Data {
+    margin-left: 20px;
+}
+
+.form-check {
+    display: flex;
+    gap: 100px;
+}
+  
+.form-check-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+  
+.form-check-input {
+    margin-right: 5px;
+}
+
+.form-check-label {
+    align-items: center;
+}
