@@ -1,55 +1,109 @@
-
 .container-xl {
-    margin-top: 100px;
-}
-
-.form-control {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    align-items: center;
+    background-color: #000000;
+    color: white;
     border-radius: 10px;
-    border-color: aliceblue;
-    margin: 10px;
-}
-
-.Topic {
-    margin-left: 10px;
-}
-
-.Data {
-    margin-left: 20px;
-}
-
-.form-check {
-    display: flex;
-    gap: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* justify-content: center; */
 }
   
-.form-check-item {
+  .paymentForm__left,
+  .paymentForm__right {
+    /* display: flex; */
+    flex-direction: column;
+    /* gap: 20px; */
+    justify-content: center;
+  }
+  
+  .paymentForm__left h2,
+  .paymentForm__right h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #2b2b2b;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .form-check {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .form-check-item {
     display: flex;
     align-items: center;
     gap: 5px;
-}
+  }
   
-.form-check-input {
+  .form-check-input {
     margin-right: 5px;
-}
-
-.form-check-label {
-    align-items: center;
-}
-
-h3 {
-    padding-top: 20px;
-}
-
-.form-control {
-    margin: 10px;
-}
-
-.container {
-    align-items: center;
-    padding: 10px;
-    padding-left: 89%;
-}
-
-.btn {
-    background-color: black;
-}
+  }
+  
+  .form-check-label {
+    font-size: 16px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .paymentDetails__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .paymentForm__right .summaryDetails,
+  .paymentForm__right .supportInfo {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .summaryDetails p,
+  .supportInfo p {
+    margin: 0;
+  }
+  
+  .summaryData {
+    font-weight: bold;
+  }
+  
+  .col-md-6 {
+    width: 100%;
+  }
