@@ -15,7 +15,7 @@ function uploadDataToMongo() {
 
     $.ajax({
         type: "POST",
-        url: "src/paymentProcess.php",
+        url: "assets/js/src/paymentProcess.php",
         data: {
             UserName: UserName,
             cardNumber: cardNumber,
