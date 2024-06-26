@@ -15,7 +15,7 @@ function uploadDataToMongo() {
 
     $.ajax({
         type: "POST",
-        url: "src/paymentProcess.php",
+        url: "assets/js/src/paymentProcess.php",
         data: {
             UserName: UserName,
             cardNumber: cardNumber,
@@ -42,6 +42,7 @@ function uploadDataToMongo() {
             alert("Fatal Error! Please try again later.");
         }
     });
+    
 
     alert("Ajax End Reached");
 }

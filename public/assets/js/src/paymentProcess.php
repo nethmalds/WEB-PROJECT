@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $currentDateTime = date('Y-m-d H:i:s');
 
-require 'vendor/autoload.php';
+require '../../../../vendor/autoload.php';
 
 $mongoUri = "mongodb://localhost:27017";
 $dbName = "MEDIX";
