@@ -80,89 +80,61 @@
   </nav>
   </head>
 
-  <!-- Payment Form -->
-
-  <div class="container-xl">
-    <div class="paymentForm">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="paymentForm__left">
-            <h2>Payment Details</h2>
-            <form action="">
-              <div class="form-group">
-                <!-- Show Payment Details -->
-                <div class="paymentDetails">
-                  <div class="paymentDetails__item">
-                    <p class="Topic">Item Price x Item Qty</p>
-                    <p class="Data">TODO</p>
-                  </div>
-                  <div class="paymentDetails__item">
-                    <p class="Topic">Shipping</p>
-                    <p class="Data">TODO</p>
-                  </div>
-                  <div class="paymentDetails__item">
-                    <p class="Topic">Total</p>
-                    <p class="Data">TODO</p>
-                  </div>
-                </div>
-                <!-- <form id="paymentForm" onsubmit="validateInputData(); return false;">
-                  <input type="text" class="form-control" id="retriveName" placeholder="Name">
-                  <input type="text" class="form-control" id="cardNumber" placeholder="Card Number">
-                  <input type="text" class="form-control" id="cardHolder" placeholder="Card Holder">
-                  <input type="text" id="expDT" placeholder="Expiration Date (MM/YY)">
-                  <input type="text" id="cvv" placeholder="CVV">
-                  <input type="text" id="zipCode" placeholder="Zip Code">
-                  <input type="text" id="city" placeholder="City">
-                  <input type="text" id="state" placeholder="State">
-                  <input type="text" id="address" placeholder="Address">
-                  <input type="email" id="email" placeholder="Email">
-                  <input type="tel" id="phone" placeholder="Phone">
-                  <input type="text" id="itemAmount" placeholder="Amount">
-                  <input type="text" id="paymentAmount" placeholder="Price">
-                  <button type="submit">Submit Payment</button>
-              </form> -->
-              
-                <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code">
-                <input type="text" class="form-control" id="city" placeholder="Enter City">
-                <input type="text" class="form-control" id="state" placeholder="Enter State">
-                <div class="form-check">
-                  <div class="form-check-item">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard">
-                    <label class="form-check-label" for="creditCard">Credit Card</label>
-                    </div>
-                  <div class="form-check-item">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="debitCard" value="debitCard">
-                    <label class="form-check-label" for="debitCard">Debit Card</label>
-                  </div>
-                  <div class="form-check-item">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery">
-                    <label class="form-check-label" for="cashOnDelivery">Cash On Delivery</label>
-                  </div>
-                  </div>
-                <div>
-
-                </div>
-                <h3 for="cardNumber">Card Details</label>
-                <label id="retriveName" value="DummyName"></label>
-                <label id="email" value="DummyEmail"></label>
-                <label id="address" value="DummyAddress"></label>
-                <label id="phone" value="DummyPhone"></label>
-                <label id="paymentAmount" value="100"></label>
-                <label id="itemAmount" value="1"></label>
-                <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
-                <input type="text" class="form-control" id="cardHolder" placeholder="Enter Card Holder Name">
-                <input type="text" class="form-control" id="expDT" placeholder="Enter Expiration Date">
-                <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
-                <div class="container">
-                  <button id="submit" class="btn btn-dark" onclick="validateInputData()">Submit</button>
-                </div>
+<!-- Payment Form -->
+<div class="container-xl">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="paymentForm__left">
+        <h2>Payment Details</h2>
+        <form action="">
+          <div class="form-group">
+            <div class="paymentDetails">
+              <div class="paymentDetails__item">
+                <p class="Topic">Item Price x Item Qty</p>
+                <p class="Data">TODO</p>
               </div>
-            </form>
+              <div class="paymentDetails__item">
+                <p class="Topic">Shipping</p>
+                <p class="Data">TODO</p>
+              </div>
+              <div class="paymentDetails__item">
+                <p class="Topic">Total</p>
+                <p class="Data">TODO</p>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code">
+            <input type="text" class="form-control" id="city" placeholder="Enter City">
+            <input type="text" class="form-control" id="state" placeholder="Enter State">
+            <div class="form-check">
+              <div class="form-check-item">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard">
+                <label class="form-check-label" for="creditCard">Credit Card</label>
+              </div>
+              <div class="form-check-item">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="debitCard" value="debitCard">
+                <label class="form-check-label" for="debitCard">Debit Card</label>
+              </div>
+              <div class="form-check-item">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cashOnDelivery">
+                <label class="form-check-label" for="cashOnDelivery">Cash On Delivery</label>
+              </div>
+            </div>
+            <h3>Card Details</h3>
+            <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
+            <input type="text" class="form-control" id="cardHolder" placeholder="Enter Card Holder Name">
+            <input type="text" class="form-control" id="expDT" placeholder="Enter Expiration Date">
+            <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+            <div class="container">
+              <button id="submit" class="btn" onclick="validateInputData()">Submit</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
+ </div>
+
+
 
   
 
