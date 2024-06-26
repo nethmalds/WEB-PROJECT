@@ -42,6 +42,7 @@ function uploadDataToMongo() {
             alert("Fatal Error! Please try again later.");
         }
     });
+    
 
     alert("Ajax End Reached");
 }
