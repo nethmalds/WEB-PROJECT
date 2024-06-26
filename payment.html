@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html data-bs-theme="dark" lang="en" data-bss-forced-theme="light">
   <head>
     <meta charset="utf-8">
@@ -8,9 +7,10 @@
     rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"/>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <link rel="stylesheet" href="landingStyles.css" type="text/css">
    <link rel="stylesheet" href="assets/styles/paymentPage.css" type="text/css">
-
+    <script src="paymentScripts.js"></script>
    <!-- <link rel="" -->
   </head>
   <body>
@@ -71,10 +71,10 @@
             <a class="nav-link" href="">ACCOUNT</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <!-- <form class="d-flex" role="search">
           <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-secondary search-icon" type="submit">Search</button>
-        </form>
+        </form> -->
       </div>
     </div>
   </nav>
@@ -105,12 +105,31 @@
                     <p class="Data">TODO</p>
                   </div>
                 </div>
-                <!-- Add radio buttons to select the payment method -->
+                <form id="paymentForm" onsubmit="validateInputData(); return false;">
+                  <input type="text" id="retriveName" placeholder="Name">
+                  <input type="text" id="cardNumber" placeholder="Card Number">
+                  <input type="text" id="cardHolder" placeholder="Card Holder">
+                  <input type="text" id="expDT" placeholder="Expiration Date (MM/YY)">
+                  <input type="text" id="cvv" placeholder="CVV">
+                  <input type="text" id="zipCode" placeholder="Zip Code">
+                  <input type="text" id="city" placeholder="City">
+                  <input type="text" id="state" placeholder="State">
+                  <input type="text" id="address" placeholder="Address">
+                  <input type="email" id="email" placeholder="Email">
+                  <input type="tel" id="phone" placeholder="Phone">
+                  <input type="text" id="itemAmount" placeholder="Amount">
+                  <input type="text" id="paymentAmount" placeholder="Price">
+                  <button type="submit">Submit Payment</button>
+              </form>
+              
+                <!-- <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code">
+                <input type="text" class="form-control" id="city" placeholder="Enter City">
+                <input type="text" class="form-control" id="state" placeholder="Enter State">
                 <div class="form-check">
                   <div class="form-check-item">
                     <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard">
                     <label class="form-check-label" for="creditCard">Credit Card</label>
-                  </div>
+                    </div>
                   <div class="form-check-item">
                     <input class="form-check-input" type="radio" name="paymentMethod" id="debitCard" value="debitCard">
                     <label class="form-check-label" for="debitCard">Debit Card</label>
@@ -119,12 +138,24 @@
                     <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery">
                     <label class="form-check-label" for="cashOnDelivery">Cash On Delivery</label>
                   </div>
+                  </div>
+                <div>
+
                 </div>
-                
-                <label for="cardNumber">Card Details</label>
+                <h3 for="cardNumber">Card Details</label>
+                <label id="retriveName" value="DummyName"></label>
+                <label id="email" value="DummyEmail"></label>
+                <label id="address" value="DummyAddress"></label>
+                <label id="phone" value="DummyPhone"></label>
+                <label id="paymentAmount" value="100"></label>
+                <label id="itemAmount" value="1"></label>
                 <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
+                <input type="text" class="form-control" id="cardHolder" placeholder="Enter Card Holder Name">
                 <input type="text" class="form-control" id="expDT" placeholder="Enter Expiration Date">
                 <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+                <div class="container">
+                  <button id="submit" class="btn btn-dark" onclick="validateInputData()">Submit</button>
+                </div> -->
               </div>
             </form>
           </div>
