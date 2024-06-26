@@ -35,3 +35,21 @@
 .form-check-label {
     align-items: center;
 }
+
+h3 {
+    padding-top: 20px;
+}
+
+.form-control {
+    margin: 10px;
+}
+
+.container {
+    align-items: center;
+    padding: 10px;
+    padding-left: 89%;
+}
+
+.btn {
+    background-color: black;
+}
