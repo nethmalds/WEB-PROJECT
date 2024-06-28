@@ -8,36 +8,32 @@
     rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"/>
-   <link rel="stylesheet" href="assets/styles/landingStyles.css" type="text/css">
+   <link rel="stylesheet" href="landingStyles.css" type="text/css">
   </head>
-  <body>
+  <body background="assets\Images\BG\BG image.svg">
 <!-- Nav Bar -->
- <head>
   <nav class="navbar fixed-top navbar-expand-lg">
     <div class="container-xxl">
-      <a class="navbar-brand p-0 me-5 active" href="#">
-        <img src="assets\Images\Carousal Images\Medix logo.png" width="120" alt=""class="me-3">
-      </a>
-      <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-Toggler navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="LandingPage.html">HOME</a>
+            <a class="nav-link " aria-current="page" href="http://127.0.0.1:5500/Home.html">HOME</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               CATEGORIES
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" id="categories-dropmenu">
                 <li><a class="dropdown-item" href="#">PRESCRIPTION ONLY MEDICINES</a></li>
                 <li><a class="dropdown-item" href="#">OVER THE COUNTER MEDICINES</a></li>
-                <li><a class="dropdown-item" href="#">COMPLEMENTARY MEDICINES</a></li>
-                <li><a class="dropdown-item" href="#">MEDICAL DEVICIES</a></li>
-                <li><a class="dropdown-item" href="#">BABY CARE</a></li>
+                <li><a class="dropdown-item" href="#">VITAMINS & SUPPLEMENTS</a></li>
+                <li><a class="dropdown-item" href="#">BEAUTY & PERSONAL CARE</a></li>
+                <li><a class="dropdown-item" href="#">MOTHER & BABY CARE</a></li>
                 <li><a class="dropdown-item" href="#">ADULT CARE</a></li>
-                <li><a class="dropdown-item" href="#">BEAUTY CARE</a></li>
+                <li><a class="dropdown-item" href="#">MEDICAL DEVICES</a></li>
+                <li><a class="dropdown-item" href="#">DAILY NEEDS</a></li>
                 <li><a class="dropdown-item" href="#">PET CARE</a></li>
               </li>
             </ul>
@@ -47,21 +43,24 @@
               PHARMACIES
             </a>
             <ul class="dropdown-menu">
-              <li class="dropdown-header"><h6>WESTERN PROVIENCE</h6>
-                <li><a class="dropdown-item" href="#">Item 1</a></li>
-                <li><a class="dropdown-item" href="#">Item 2</a></li>
-                <li><a class="dropdown-item" href="#">Item 3</a></li>
-                <li><a class="dropdown-item" href="#">Item 4</a></li>
-                <li><a class="dropdown-item" href="#">Item 5</a></li>
-              </li>
-              <li><hr class="dropdown-divider"></li>
-              <li class="dropdown-header"><h6>OTHER PROVIENCES</h6>
-                <li><a class="dropdown-item" href="#">Item 1</a></li>
-                <li><a class="dropdown-item" href="#">Item 2</a></li>
-                <li><a class="dropdown-item" href="#">Item 3</a></li>
-                <li><a class="dropdown-item" href="#">Item 4</a></li>
-                <li><a class="dropdown-item" href="#">Item 5</a></li>
-              </li>
+              <div class="d-flex">
+                <div class="d-grid pe-2">
+                  <li class="dropdown-header"><h6>WESTERN PROVIENCE</h6></li>
+                  <li><a class="dropdown-item" href="#">Item 1</a></li>
+                  <li><a class="dropdown-item" href="#">Item 2</a></li>
+                  <li><a class="dropdown-item" href="#">Item 3</a></li>
+                  <li><a class="dropdown-item" href="#">Item 4</a></li>
+                  <li><a class="dropdown-item" href="#">Item 5</a></li>
+                </div>
+                <div class="d-grid ps-3">
+                  <li class="dropdown-header"><h6>OTHER PROVIENCES</h6></li>
+                  <li><a class="dropdown-item" href="#">Item 1</a></li>
+                  <li><a class="dropdown-item" href="#">Item 2</a></li>
+                  <li><a class="dropdown-item" href="#">Item 3</a></li>
+                  <li><a class="dropdown-item" href="#">Item 4</a></li>
+                  <li><a class="dropdown-item" href="#">Item 5</a></li>
+                </div>
+              </div>
             </ul>
           </li>
           <li class="nav-item">
@@ -70,111 +69,178 @@
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-secondary search-icon" type="submit">Search</button>
+          <button class="btn search-icon" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
-  </head>
-  <main>
       <!--Carousel-->
-      <div class="container-fluid">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner image-container">
+          <div class="carousel-item active" data-bs-interval="5000">
+            <img src="assets\Images\Carousal Images\Carousel Image1.svg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="assets\Images\Carousal Images\Carousel Image2.svg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="assets\Images\Carousal Images\Carousel Image3.svg" class="d-block w-100" alt="...">
+          </div>
+          <span class="slogen-overlay">Your Ultimate Health-Care Destination !</span>
+            <span class="text-overlay">Whether you're picking up a prescription or seeking wellness advice, our expert pharmacists are here for you. 
+              <br>Discover personalized care and top-quality health products at <b>MEDIX</b> — where your well-being comes first.</span>
+            <a href="http://127.0.0.1:5500/Home.html"><button class="btn button-overlay">SHOP NOW</button></a>
+          <img src="assets\Images\Carousal Images\Medix logo.png" class="logo-overlay" alt="">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </div>
+  <!--card carousel-->
+  <div class="row d-flex">
+    <span class="card-carousel-toptxt">FIND YOUR MEDICINE</span>
+      <div class="container col-xl-3">
+          <div id="cardCarouselOne" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="card-carousel">
+                <div class="carousel-item active" id="card-carousel-item">
+                    <div class="card" id="category-card">
+                        <img src="assets\Images\Categories Images\Prescription only medicines.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <span class="card-head">PRESCRIPTION ONLY MEDICINES</span>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-card">Find More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card" id="category-card">
+                        <img src="assets\Images\Categories Images\Over the counter medicines.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <span class="card-head">OVER THE COUNTER MEDICINES</span>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-card">Find More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card" id="category-card">
+                        <img src="assets\Images\Categories Images\Vitamins & Suppliments.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <span class="card-head">VITAMINS & SUPPLEMENTS</span>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-card">Find More</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#cardCarouselOne" data-bs-slide="prev">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#cardCarouselOne" data-bs-slide="next">
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+      </div>
+      <div class="container col-xl-3">
+        <div id="cardCarouselTwo" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
-              <div class="image-container">
-                <img src="assets\Images\Carousal Images\Carousel Image1.svg" class="d-block w-100" alt="...">
-                <span class="slogen-overlay">Your Ultimate Health-Care Destination !</span>
-                <span class="text-overlay">Whether you're picking up a prescription or seeking wellness advice, our expert pharmacists and friendly staff are here for you. 
-                 <br>Discover personalized care and top-quality health products at <b>MEDIX</b> — where your well-being comes first.</span>
-                 <button class="btn button-overlay">SHOP NOW</button>
+            <div class="card-carousel">
+              <div class="carousel-item active" id="card-carousel-item">
+                  <div class="card" id="category-card">
+                      <img src="assets\Images\Categories Images\Beauty Care.webp" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <span class="card-head">BEAUTY & PERSONAL CARE</span>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-card">Find More</a>
+                      </div>
+                  </div>
               </div>
+              <div class="carousel-item">
+                  <div class="card" id="category-card">
+                      <img src="assets\Images\Categories Images\Mother care.webp" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-head">MOTHER & BABY CARE</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-card">Find More</a>
+                      </div>
+                  </div>
               </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <div class="image-container">
-                <img src="assets\Images\Carousal Images\Carousel Image2.svg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <div class="image-container">
-                <img src="assets\Images\Carousal Images\Carousel Image3.svg" class="d-block w-100" alt="...">
+              <div class="carousel-item">
+                  <div class="card" id="category-card">
+                      <img src="assets\Images\Categories Images\Adult Care.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <span class="card-head">ADULT CARE</span>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-card">Find More</a>
+                      </div>
+                  </div>
               </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="visually-hidden">Previous</span>
+          <button class="carousel-control-prev" type="button" data-bs-target="#cardCarouselTwo" data-bs-slide="prev">
+              <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="visually-hidden">Next</span>
+          <button class="carousel-control-next" type="button" data-bs-target="#cardCarouselTwo" data-bs-slide="next">
+              <span class="visually-hidden">Next</span>
           </button>
-          </div>
-        <img src="assets/Images/Carousal Images/Medix logo.png" class="logo-overlay">
-      </div>
-    <!--Cards-->
-    <!-- <div class="container-xxl d-flex justify-content-center">
-      <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card" style="background-color:#ebf2ff;">
-            <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-            <div class="card-body text-bg-dark">
-              <h6 class="card-title">AMOXICILLIN-SODIUM-INJECTION 500MG</h6>
-              <p class="card-text">Broad-spectrum penicillin antibiotic effective against many bacterial infections.</p>
-              <a href="#" class="btn btn-primary btn-sm btn-card">BUY NOW</a>
-              <a href="#" class="btn btn-primary btn-sm ms-3 btn-card">ADD TO CART</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card" style="background-color:#ebf2ff">
-            <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-            <div class="card-body text-bg-dark">
-              <h6 class="card-title">AMOXICILLIN-SODIUM-INJECTION 500MG</h6>
-              <p class="card-text">Broad-spectrum penicillin antibiotic effective against many bacterial infections.</p>
-              <a href="#" class="btn btn-primary btn-sm btn-card">BUY NOW</a>
-              <a href="#" class="btn btn-primary btn-sm ms-3 btn-card">ADD TO CART</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card" style=" background-color:#ebf2ff">
-            <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-            <div class="card-body text-bg-dark">
-              <h6 class="card-title">AMOXICILLIN-SODIUM-INJECTION 500MG</h6>
-              <p class="card-text">Broad-spectrum penicillin antibiotic effective against many bacterial infections.</p>
-              <a href="#" class="btn btn-primary btn-sm btn-card">BUY NOW</a>
-              <a href="#" class="btn btn-primary btn-sm ms-3 btn-card">ADD TO CART</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card" style=" background-color:#ebf2ff">
-            <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-            <div class="card-body text-bg-dark">
-              <h6 class="card-title">AMOXICILLIN-SODIUM-INJECTION 500MG</h6>
-              <p class="card-text">Broad-spectrum penicillin antibiotic effective against many bacterial infections.</p>
-              <a href="#" class="btn btn-primary btn-sm btn-card">BUY NOW</a>
-              <a href="#" class="btn btn-primary btn-sm ms-3 btn-card">ADD TO CART</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card" style="background-color:#ebf2ff">
-            <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-            <div class="card-body text-bg-dark">
-              <h6 class="card-title">AMOXICILLIN-SODIUM-INJECTION 500MG</h6>
-              <p class="card-text">Broad-spectrum penicillin antibiotic effective against many bacterial infections.</p>
-              <a href="#" class="btn btn-primary btn-sm btn-card">BUY NOW</a>
-              <a href="#" class="btn btn-primary btn-sm ms-3 btn-card">ADD TO CART</a>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  </main> -->
+      <div class="container col-xl-3">
+        <div id="cardCarouselThree" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="card-carousel">
+              <div class="carousel-item active" id="card-carousel-item">
+                  <div class="card" id="category-card">
+                      <img src="assets\Images\Categories Images\Medical Devices.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-head">MEDICAL DEVICES</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-card">Find More</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card" id="category-card">
+                      <img src="assets\Images\Categories Images\Daily Needs.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">DAILY NEEDS</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-card">Find More</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card" id="category-card">
+                      <img src="assets\Images\Categories Images\Pet care.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-head">PET CARE</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-card">Find More</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#cardCarouselThree" data-bs-slide="prev">
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#cardCarouselThree" data-bs-slide="next">
+              <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+  </div>
   <!--footer-->
   <footer>
     <div class="container-xxl">
-      <div class="row">
+      <div class="row card-row">
         <div class="col-lg-4 col-md-5 col-sm-6">
           <img src="assets\Images\Carousal Images\Medix logo.png" alt="main-logo" class="ms-5" width="150px"><br>
           <small>Your Ultimate Health-Care Destination!</small>
@@ -187,7 +253,7 @@
           </div>
           <br>
           <div class="d-grid">
-            <h6>Visit Us</h6>
+            <h6>Visit Us : </h6>
             <small>No 131/03, Pitipana-Thalagala Road,<br>Homagama. </small>
           </div>
         </div>
@@ -208,7 +274,7 @@
               <div class="d-grid">
                 <h6>Product Overview</h6>
                 <a href="#" class="footer-link"><small>Critical Health Care</small></a>
-                <a href="#" class="footer-link"><small>Skin Care</small></a>
+                <a href="#" class="footer-link"><small>Beauty Care</small></a>
                 <a href="#" class="footer-link"><small>Personal Care</small></a>
                 <a href="#" class="footer-link"><small>Daily Needs</small></a>
                 <a href="#" class="footer-link"><small>Mother & Baby Care</small></a>
@@ -229,8 +295,8 @@
   <div class="d-flex justify-content-center end-text">
     <small><p><sup>&copy;</sup>2024 MEDIX. All Rights Reserved.</p></small>
   </div>
+  <!--Bootstrap JS-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   </body>
-
 </html>
