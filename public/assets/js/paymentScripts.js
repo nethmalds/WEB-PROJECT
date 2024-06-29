@@ -1,3 +1,6 @@
+var inhibitor = 0;
+
+
 function uploadDataToMongo() {
     let UserName = document.getElementById("retriveName").value;
     let cardNumber = document.getElementById("cardNumber").value;
@@ -12,6 +15,20 @@ function uploadDataToMongo() {
     let phone = document.getElementById("phone").value;
     let amount = document.getElementById("itemAmount").value;
     let price = document.getElementById("paymentAmount").value;
+    let Method;
+    let Status;
+    
+    if (inhibitor == 1) {
+        Method = "Cash On Delivery";
+        Status = "Pending";
+    } else if (inhibitor == 2) {
+        Method = "Debit Card";
+        Status = "Paid";
+    } else {
+        Method = "Credit Card";
+        Status = "Paid";
+    }
+    
 
     $.ajax({
         type: "POST",
@@ -29,12 +46,14 @@ function uploadDataToMongo() {
             email: email,
             phone: phone,
             Price: price,
-            Amount: amount
+            Amount: amount,
+            Method: Method,
+            Status: Status
         },
         success: function(response) {
             console.log("Payment Succeeded: " + response);
             alert("Payment Succeeded, Thank you!");
-            clearCart();
+            // clearCart();
             // window.location.href = 'index.html'; // Redirect user after successful payment
         },
         error: function(xhr, status, error) {
@@ -44,7 +63,7 @@ function uploadDataToMongo() {
     });
     
 
-    alert("Ajax End Reached");
+    // alert("Ajax End Reached");
 }
 
 function validateInputData() {
@@ -57,28 +76,59 @@ function validateInputData() {
     let cardHolderPattern = /^[a-zA-Z\s]{1,}$/;
     let expirationDatePattern = /^[0-9]{2}\/[0-9]{2}$/;
     let securityCodePattern = /^[0-9]{3}$/;
+    if (inhibitor == 0 || inhibitor == 2) {
+        // document
+        if (!cardNumber.match(cardNumberPattern)) {
+            alert("Invalid card number");
+            return;
+        }
 
-    if (!cardNumber.match(cardNumberPattern)) {
-        alert("Invalid card number");
-        return;
+        if (!cardHolder.match(cardHolderPattern)) {
+            alert("Invalid card holder");
+            return;
+        }
+
+        if (!expirationDate.match(expirationDatePattern)) {
+            alert("Invalid expiration date");
+            return;
+        }
+
+        if (!securityCode.match(securityCodePattern)) {
+            alert("Invalid security code");
+            return;
+        }
+        alert("Trying to upload data to mongoDB...");
+        try {
+            uploadDataToMongo();
+        }
+        catch (error) {
+            console.error("An Error Occurred: " + error);
+            alert("Fatal Error! Please try again later.");
+        }
+        // alert("Payment successful");
+    } else {
+        uploadDataToMongo();
+        alert("You have Selected Cash On Delivery method. Thanks for using our services...")
     }
-
-    if (!cardHolder.match(cardHolderPattern)) {
-        alert("Invalid card holder");
-        return;
-    }
-
-    if (!expirationDate.match(expirationDatePattern)) {
-        alert("Invalid expiration date");
-        return;
-    }
-
-    if (!securityCode.match(securityCodePattern)) {
-        alert("Invalid security code");
-        return;
-    }
-
-    uploadDataToMongo();
-    alert("Payment successful");
     // document.getElementById("paymentForm").reset();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+    const cardContainer = document.getElementById('cardContainer');
+
+    paymentMethods.forEach(method => {
+      method.addEventListener('change', function () {
+        if (this.value === 'cashOnDelivery') {
+          cardContainer.style.display = 'none';
+          inhibitor = 1;
+        } else if (this.value === 'debitCard'){
+          inhibitor = 2;
+          cardContainer.style.display = 'block';
+        } else {
+          cardContainer.style.display = 'block';
+          inhibitor = 0;
+        }
+      });
+    });
+  });

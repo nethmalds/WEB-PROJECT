@@ -102,12 +102,20 @@
                 <p class="Data">TODO</p>
               </div>
             </div>
+            <label id="retriveName" value="Null"></label>
+            <label id="city" value="Null"></label>
+            <label id="address" value="Null"></label>
+            <label id="email" value="Null"></label>
+            <label id="phone" value="Null"></label>
+            <label id="itemAmount" value="Null"></label>
+            <label id="paymentAmount" value="Null"></label>
             <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code">
             <input type="text" class="form-control" id="city" placeholder="Enter City">
             <input type="text" class="form-control" id="state" placeholder="Enter State">
             <div class="form-check">
               <div class="form-check-item">
-                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard">
+                <!-- Set this to active state -->
+                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
                 <label class="form-check-label" for="creditCard">Credit Card</label>
               </div>
               <div class="form-check-item">
@@ -119,11 +127,13 @@
                 <label class="form-check-label" for="cashOnDelivery">Cash On Delivery</label>
               </div>
             </div>
-            <h3>Card Details</h3>
-            <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
-            <input type="text" class="form-control" id="cardHolder" placeholder="Enter Card Holder Name">
-            <input type="text" class="form-control" id="expDT" placeholder="Enter Expiration Date">
-            <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+            <div id="cardContainer">
+              <h3>Card Details</h3>
+              <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
+              <input type="text" class="form-control" id="cardHolder" placeholder="Enter Card Holder Name">
+              <input type="text" class="form-control" id="expDT" placeholder="Enter Expiration Date">
+              <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+            </div>
             <div class="container">
               <button id="submit" class="btn" onclick="validateInputData()">Submit</button>
             </div>

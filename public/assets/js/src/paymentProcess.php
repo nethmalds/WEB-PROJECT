@@ -32,6 +32,8 @@ try {
         'phone' => $_POST['phone'],
         'Price' => $_POST['Price'],
         'Amount' => $_POST['Amount'],
+        'Method' => $_POST['Method'],
+        'Status' => $_POST['Status'],
         'dateTime' => $currentDateTime
     );
 
