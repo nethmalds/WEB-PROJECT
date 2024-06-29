@@ -19,7 +19,8 @@ try {
     $collection = $db->$collectionName;
 
     $document = array(
-        'name' => $_POST['UserName'],
+        'ItemName' => $_POST['ItemName'],
+        'UserID' => $_POST['UserID'],
         'cardNumber' => $_POST['cardNumber'],
         'cardHolder' => $_POST['cardHolder'],
         'expirationDate' => $_POST['expirationDate'],

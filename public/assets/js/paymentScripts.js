@@ -2,7 +2,7 @@ var inhibitor = 0;
 
 
 function uploadDataToMongo() {
-    let UserName = document.getElementById("retriveName").value;
+    let ItemName = document.getElementById("retriveName").value;
     let cardNumber = document.getElementById("cardNumber").value;
     let cardHolder = document.getElementById("cardHolder").value;
     let expirationDate = document.getElementById("expDT").value;
@@ -15,6 +15,7 @@ function uploadDataToMongo() {
     let phone = document.getElementById("phone").value;
     let amount = document.getElementById("itemAmount").value;
     let price = document.getElementById("paymentAmount").value;
+    let UserID = document.getElementById("retriveUserID").value;
     let Method;
     let Status;
     
@@ -34,7 +35,8 @@ function uploadDataToMongo() {
         type: "POST",
         url: "assets/js/src/paymentProcess.php",
         data: {
-            UserName: UserName,
+            ItemName: ItemName,
+            UserID: UserID,
             cardNumber: cardNumber,
             cardHolder: cardHolder,
             expirationDate: expirationDate,
@@ -52,7 +54,7 @@ function uploadDataToMongo() {
         },
         success: function(response) {
             console.log("Payment Succeeded: " + response);
-            alert("Payment Succeeded, Thank you!");
+            alert("Payment Accepted !, Thank you for using our services...");
             // clearCart();
             // window.location.href = 'index.html'; // Redirect user after successful payment
         },
@@ -97,7 +99,6 @@ function validateInputData() {
             alert("Invalid security code");
             return;
         }
-        alert("Trying to upload data to mongoDB...");
         try {
             uploadDataToMongo();
         }
