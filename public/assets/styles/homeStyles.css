@@ -78,6 +78,7 @@ body{
 .custom-carousel{
     max-height: 400px; 
     margin-top: 55px;
+    margin-left: 10px;
 }
 .card-title{
     margin-left: 5px;
@@ -112,6 +113,7 @@ body{
     }
     .custom-carousel{
         max-width: 1400px;
+        margin-left: 25px;
     }
 }
 @media screen and (max-width: 1200px){
@@ -121,6 +123,9 @@ body{
     .accordion-header{
         font-size: smaller;
         margin-top: 15.5px;
+    }
+    .custom-carousel{
+        margin-left: 25px;
     }
     .accordion-body-link{
         font-size: 12px;
@@ -138,6 +143,7 @@ body{
     }
     .custom-carousel{
         margin-top: 40px;
+        margin-left: 13px;
     }
     .accordion-header{
         font-size: small;
@@ -150,6 +156,7 @@ body{
 .card-row{
     display: flex;
     justify-content: center;
+    max-width: 100%;
 }
 .card-header{
     color: white;

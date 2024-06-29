@@ -297,7 +297,7 @@ footer{
   margin-right: 65px;
 }
 .container{
-  max-width: 600px;
+  max-width: 550px;
 }
 .card-carousel-toptxt{
   color: white;
@@ -310,6 +310,7 @@ footer{
 .card-row{
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 #category-card{
   background-color: #002e45a1;
