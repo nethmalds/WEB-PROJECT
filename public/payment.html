@@ -8,21 +8,19 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"/>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="assets/styles/landingStyles.css" type="text/css">
-   <link rel="stylesheet" href="assets/styles/paymentPage.css" type="text/css">
+   <link rel="stylesheet" href="assets\styles\homeStyles.css" type="text/css">
+   <link rel="stylesheet" href="assets\styles\paymentPage.css" type="text/css">
     <script src="assets/js/paymentScripts.js"></script>
    <!-- <link rel="" -->
   </head>
-  <body>
+  <body background="assets\Images\BG\BG image.svg">
 <!-- Nav Bar -->
- <head>
   <nav class="navbar fixed-top navbar-expand-lg">
     <div class="container-xxl">
-      <a class="navbar-brand p-0 me-5 active" href="#">
-        <img src="assets\Images\Carousal Images\Medix logo.png" width="120" alt=""class="me-3">
+      <a class="navbar-brand p-0 me-5 active" href="LandingPage.html">
+        <img src="assets\Images\Carousal Images\Medix logo.png" alt=""class="navbar-brand">
       </a>
-      <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="Toggler navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
@@ -78,41 +76,25 @@
       </div>
     </div>
   </nav>
-  </head>
-
 <!-- Payment Form -->
 <div class="container-xl">
   <div class="row">
-    <div class="col-md-6">
-      <div class="paymentForm__left">
-        <h2>Payment Details</h2>
+        <p class="Header">Payment</p>
         <form action="">
-          <div class="form-group">
-            <div class="paymentDetails">
-              <div class="paymentDetails__item">
-                <p class="Topic">Item Price x Item Qty</p>
-                <p class="Data">TODO</p>
-              </div>
-              <div class="paymentDetails__item">
-                <p class="Topic">Shipping</p>
-                <p class="Data">TODO</p>
-              </div>
-              <div class="paymentDetails__item">
-                <p class="Topic">Total</p>
-                <p class="Data">TODO</p>
-              </div>
-            </div>
-            <label id="retriveName" value="Null"></label>
-            <label id="retriveUserID" value="Null"></label>
-            <label id="city" value="Null"></label>
-            <label id="address" value="Null"></label>
-            <label id="email" value="Null"></label>
-            <label id="phone" value="Null"></label>
-            <label id="itemAmount" value="Null"></label>
-            <label id="paymentAmount" value="Null"></label>
-            <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code">
+          <div class="form-group d-flex">
+            <div class="col-6">
+            <label class="additional" id="retriveName" value="Null"></label>
+            <label class="additional" id="retriveUserID" value="Null"></label>
+            <label class="additional" id="city" value="Null"></label>
+            <label class="additional" id="address" value="Null"></label>
+            <label class="additional" id="email" value="Null"></label>
+            <label class="additional" id="phone" value="Null"></label>
+            <p class="summary-header">Shipping Details</p>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+            <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
             <input type="text" class="form-control" id="city" placeholder="Enter City">
-            <input type="text" class="form-control" id="state" placeholder="Enter State">
+            <input type="text" class="form-control" id="state" placeholder="Enter Home Address">
+            <input type="text" class="form-control" id="zipcode" placeholder="Enter Zip Code">
             <div class="form-check">
               <div class="form-check-item">
                 <!-- Set this to active state -->
@@ -129,19 +111,47 @@
               </div>
             </div>
             <div id="cardContainer">
-              <h3>Card Details</h3>
+              <p class="summary-header">Card Details</p>
               <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number">
               <input type="text" class="form-control" id="cardHolder" placeholder="Enter Card Holder Name">
               <input type="text" class="form-control" id="expDT" placeholder="Enter Expiration Date">
               <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
             </div>
             <div class="container">
-              <button id="submit" class="btn" onclick="validateInputData()">Submit</button>
+              <button id="submit" class="btn" onclick="validateInputData()">Proceed</button>
+            </div>
+            </div>
+            <div class="ms-5 mt-4 col-5">
+              <div class="paymentDetails">
+                <p class="summary-header">Order Summary</p>
+                <div class="paymentDetails__item">
+                  <p class="Topic">Item Name</p>
+                  <p class="Data">TODO</p>
+                </div>
+                <div class="paymentDetails__item">
+                  <p class="Topic">Item Price</p>
+                  <p class="Data" id="itmPrice">TODO</p>
+                </div>
+                <div class="paymentDetails__item">
+                  <p class="Topic">No.of Items</p>
+                  <p class="Data" id="itmQty">TODO</p>
+                </div>
+                <div class="paymentDetails__item">
+                  <p class="Topic">Amount</p>
+                  <p class="Data" id="amount">TODO</p>
+                </div>
+                <div class="paymentDetails__item">
+                  <p class="Topic">Shipping</p>
+                  <p class="Data" id="shipFee">TODO</p>
+                </div>
+                <div class="paymentDetails__item">
+                  <p class="Topic">Total Amount</p>
+                  <p class="Data" id="totAmount">TODO</p>
+                </div>
+              </div>
             </div>
           </div>
         </form>
-      </div>
-    </div>
   </div>
  </div>
 
