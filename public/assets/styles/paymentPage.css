@@ -81,6 +81,14 @@
     margin-bottom: 10px;
     width: 100%;
   }
+  .form-control:focus {
+    background-color: #000629c0;
+    border: none;
+  }
+  .form-control::placeholder {
+    color: #fff;
+    opacity: 0.5;
+  }
   
   .form-check {
     display: flex;
