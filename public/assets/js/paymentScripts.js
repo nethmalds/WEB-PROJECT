@@ -1,5 +1,18 @@
+
 var inhibitor = 0;
 
+$.ajax({
+    type: "GET",
+    url: "assets/js/src/paymentProcess.php",
+});
+
+function paymentCalculation(){
+    var qty = document.getElementById("itmQty").value;
+    amount =price * qty;
+    document.getElementById("amount").innerHTML = amount;
+    var totalAmount = amount + shipFee;
+    document.getElementById("totAmount").innerHTML = totalAmount;
+}
 
 function uploadDataToMongo() {
     let ItemName = document.getElementById("retriveName").value;
@@ -13,8 +26,8 @@ function uploadDataToMongo() {
     let address = document.getElementById("address").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
-    let amount = document.getElementById("itemAmount").value;
-    let price = document.getElementById("paymentAmount").value;
+    var price = document.getElementById("itmPrice").value;
+    var amount = document.getElementById("totAmount").value;
     let UserID = document.getElementById("retriveUserID").value;
     let Method;
     let Status;
