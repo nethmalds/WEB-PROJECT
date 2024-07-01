@@ -69,6 +69,7 @@ function uploadDataToMongo() {
 }
 
 function validateInputData() {
+    // Input Validation
     let cardNumber = document.getElementById("cardNumber").value;
     let cardHolder = document.getElementById("cardHolder").value;
     let expirationDate = document.getElementById("expDT").value;
@@ -79,7 +80,6 @@ function validateInputData() {
     let expirationDatePattern = /^[0-9]{2}\/[0-9]{2}$/;
     let securityCodePattern = /^[0-9]{3}$/;
     if (inhibitor == 0 || inhibitor == 2) {
-        // document
         if (!cardNumber.match(cardNumberPattern)) {
             alert("Invalid card number");
             return;
