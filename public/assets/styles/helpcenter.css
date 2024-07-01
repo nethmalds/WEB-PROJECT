@@ -54,6 +54,8 @@
     padding-left: 10px;
 }
   #statement{
+    display: flex;
+    justify-content: center;
     margin-top: 80px;
     margin-bottom: 80px;
   }
@@ -110,6 +112,9 @@
     border-radius: 5px;
     width: 100px;
     height: 40px;
+  }
+  #submit:hover{
+    background-color: #000629;
   }
   #massage,#email,#name{
     background-color: #ffffff13;
