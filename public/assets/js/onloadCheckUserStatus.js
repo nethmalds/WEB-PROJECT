@@ -1,25 +1,31 @@
-window.onload = function() {
+$(document).ready(function() {
     checkUserStatus();
-};
+});
 
 function checkUserStatus() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "assets/js/src/session.php", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = JSON.parse(xhr.responseText);
+    $.ajax({
+        url: "assets/js/src/session.php",
+        type: "GET",
+        dataType: "json",
+        success: function(response) {
             var userEmail = response.UserEmail;
             var userID = response.UserID;
-
             if (userEmail === "" || userID === "") {
                 alert("Debug: Not Logged In");
-                document.getElementById("UserAcc").innerHTML = "CUSTOMER ACCOUNT";
+                $("#UserAcc").text("CUSTOMER ACCOUNT");
+                if (window.location.pathname.includes("Home.html")) {
+                    window.location.href = "LandingPage.html";
+                }
             } else {
-                document.getElementById("UserAcc").innerHTML = userEmail;
-                alert("Debug: Logged In");
-                alert("Welcome Back, " + userEmail + " !");
+                $("#UserAcc").text("YOUR INTERFACE");
+                // Redirect to Home.html if the user in LandingPage.html
+                if (window.location.pathname.includes("userLogin.html")) {
+                    window.location.href = "Home.html";
+                    // alert("Welcome Back, " + userEmail + " !");
+                } else if (window.location.pathname.includes("Home.html")) {
+                    alert("You are automatically logged in, Welcome Back "+ userEmail + " !")
+                }
             }
         }
-    };
-    xhr.send();
+    });
 }
