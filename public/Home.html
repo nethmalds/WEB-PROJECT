@@ -8,9 +8,13 @@
     rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"/>
+    <!-- Onload Get User Status Snippet -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
     <script src="assets/js/onloadCheckUserStatus.js"></script>
+    <script src="assets/js/ProcessProduct.js"></script>
+    <label id="setUserStat" value="NULL"></label>
+    <!-- Onload Get User Status Snippert Stop -->
+    <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
   </head>
   <body background="assets\Images\BG\BG image.svg">
 <!-- Nav Bar -->
@@ -71,7 +75,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="userLogin.html">CUSTOMER ACCOUNT</a></li>
+              <li><a class="dropdown-item" href="userLogin.html" id="UserAcc">CUSTOMER ACCOUNT</a></li>
               <li><a class="dropdown-item" href="">SELLER ACCOUNT</a></li>
             </ul>
           </li>
@@ -96,7 +100,7 @@
           <div class="card-body">
             <h5 class="card-title">CATEGORIES</h5>
             <div class="accordion-item">
-                <a href="http://127.0.0.1:5500/LandingPage.html" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                <a href="LandingPage.html" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
                   PRESCRIPTION ONLY MEDICINES
                 </a>
               <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -256,7 +260,7 @@
                   <p class="p-price">2000.00LKR</p>
                   <p class="p-price-discount">1900.00LKR</p>
                 </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
+                <a href="#" class="btn btn-sm btn-card" onclick="uploadToDatabase(1, 'TestName', )">BUY NOW</a>
                 <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
               </div>
             </div>
