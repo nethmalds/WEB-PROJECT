@@ -25,7 +25,7 @@ try {
     if ($user) {
         if ($password == $user['UserPassword']) {
             $_SESSION['UserEmail'] = $user['UserEmail'];
-            $_SESSION['_id'] = (string) $user['_id'];
+            $_SESSION['_id'] = (string)$user['_id'];
 
             echo json_encode(['success' => true, 'message' => 'Login successful']);
         } else {

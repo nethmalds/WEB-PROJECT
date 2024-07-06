@@ -8,6 +8,12 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"/>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Onload Get User Status Snippet -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/onloadCheckUserStatus.js"></script>
+    <script src="assets/js/ProcessProduct.js"></script>
+    <label id="setUserStat" value="NULL"></label>
+    <!-- Onload Get User Status Snippert Stop -->
    <link rel="stylesheet" href="assets\styles\homeStyles.css" type="text/css">
    <link rel="stylesheet" href="assets\styles\paymentPage.css" type="text/css">
     <script src="assets/js/paymentScripts.js"></script>
@@ -127,33 +133,64 @@
             </div>
             <div class="ms-5 mt-4 col-5">
               <div class="paymentDetails">
-                <p class="summary-header">Order Summary</p>
-                <div class="paymentDetails__item">
-                  <p class="Topic">Item Name</p>
-                  <p class="Data">TODO</p>
-                </div>
-                <div class="paymentDetails__item">
-                  <p class="Topic">Item Price</p>
-                  <p class="Data" id="itmPrice">TODO</p>
-                </div>
-                <div class="paymentDetails__item">
-                  <p class="Topic">No.of Items</p>
-                  <p class="Data" id="itmQty">TODO</p>
-                </div>
-                <div class="paymentDetails__item">
-                  <p class="Topic">Amount</p>
-                  <p class="Data" id="amount">TODO</p>
-                </div>
-                <div class="paymentDetails__item">
-                  <p class="Topic">Shipping</p>
-                  <p class="Data" id="shipFee">TODO</p>
-                </div>
-                <div class="paymentDetails__item">
-                  <p class="Topic">Total Amount</p>
-                  <p class="Data" id="totAmount">TODO</p>
-                </div>
+                  <p class="summary-header">Order Summary</p>
+                  <div class="paymentDetails__item">
+                    <img src="" id="setImage" class="card-img-top">
+                  </div>
+                  <div class="paymentDetails__item">
+                      <p class="Topic">Item Name</p>
+                      <p class="Data" id="itemName">TODO</p>
+                  </div>
+                  <!-- <div class="paymentDetails__item">
+                      <p class="Topic">Item Price</p>
+                      <p class="Data" id="itmPrice">TODO</p>
+                  </div> -->
+                  <div class="paymentDetails__item">
+                      <p class="Topic">No. of Items</p>
+                      <p class="Data" id="itmQty">TODO</p>
+                  </div>
+                  <div class="paymentDetails__item">
+                      <p class="Topic">Price</p>
+                      <p class="Data" id="amount">TODO</p>
+                  </div>
+                  <div class="paymentDetails__item">
+                      <p class="Topic">Shipping</p>
+                      <p class="Data" id="shipFee">TODO</p>
+                  </div>
+                  <div class="paymentDetails__item">
+                      <p class="Topic">Total Amount</p>
+                      <p class="Data" id="totAmount">TODO</p>
+                  </div>
               </div>
-            </div>
+          </div>
+      
+          <script>
+              function fetchData() {
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('GET', 'assets/js/src/buyNowFetch.php', true);
+                  xhr.onreadystatechange = function () {
+                      if (xhr.readyState == 4 && xhr.status == 200) {
+                          var data = JSON.parse(xhr.responseText);
+                          if (data.error) {
+                              console.log(data.error);
+                          } else {
+                              document.getElementById('itemName').innerText = data.itemName;
+                              // document.getElementById('itmPrice').innerText = data.price;
+                              document.getElementById('setImage').src = data.itemLink;
+                              document.getElementById('itmQty').innerText = 1;
+                              document.getElementById('amount').innerText = 'Rs.'+data.price+'.00';
+                              document.getElementById('shipFee').innerText = 'Rs.250';
+                              document.getElementById('totAmount').innerText = 'Rs.'+(parseInt(data.price)+250)+'.00';
+                          }
+                      }
+                  };
+                  xhr.send();
+              }
+      
+              document.addEventListener('DOMContentLoaded', function() {
+                  fetchData();
+              });
+          </script>
           </div>
         </form>
   </div>

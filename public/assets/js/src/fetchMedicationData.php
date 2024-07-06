@@ -7,6 +7,10 @@ $collection = $client->MEDIX->Medications;
 $cursor = $collection->aggregate([ ['$sample' => ['size' => 4]] ]);
 $medications = iterator_to_array($cursor);
 
+foreach ($medications as &$medication) {
+    $medication['_id'] = (string)$medication['_id'];
+}
+
 header('Content-Type: application/json');
 echo json_encode($medications);
 ?>
