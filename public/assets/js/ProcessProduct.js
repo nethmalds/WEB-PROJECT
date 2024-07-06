@@ -10,6 +10,7 @@ function uploadToDatabase(productID, productName, userID, buyOrCart) {
         },
         success: function(response) {
             if (response === "success") {
+                
                 alert("Product has been uploaded successfully!");
                 // alert()
                 window.location.href = "Home.html";

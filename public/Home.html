@@ -248,74 +248,48 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div class="row card-row">
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card" onclick="uploadToDatabase(1, 'TestName', )">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
-          </div>
       </div>
     </div>
-  </div>
+    <div class="row card-row" id="medication-cards">
+          <!-- Cards will be injected here by JavaScript -->
+    </div>
+    <div>
+      <script>
+          $(document).ready(function() {
+              $.ajax({
+                  url: 'assets/js/src/fetchMedicationData.php',
+                  method: 'GET',
+                  success: function(data) {
+                      let cardsHtml = '';
+                      data.forEach(medication => {
+                          cardsHtml += `
+                              <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
+                                  <div class="card" id="product-card">
+                                      <div class="card-header">${medication.prescription === 'required' ? 'ONLY ALLOW WITH PRESCRIPTION' : ''}</div>
+                                      <img src="${medication.imageLink}" class="card-img-top" alt="${medication.medication}">
+                                      <div class="card-body">
+                                          <a class="card-head" href="#">${medication.medication} ${medication.doseData}</a>
+                                          <p class="card-text">${medication.details}</p>
+                                          <div class="d-flex">
+                                              <p class="p-price">2000.00LKR</p>
+                                              <p class="p-price-discount">1900.00LKR</p>
+                                          </div>
+                                          <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
+                                          <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          `;
+                      });
+                      $('#medication-cards').html(cardsHtml);
+                  },
+                  error: function(xhr, status, error) {
+                      console.error(error);
+                  }
+              });
+          });
+      </script>
+    </div>
   <footer>
     <div class="container-xxl">
       <div class="row card-row">
