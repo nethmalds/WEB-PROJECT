@@ -248,47 +248,46 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        <div class="row card-row" id="medication-cards">
+          <div>
+            <script>
+                $(document).ready(function() {
+                    $.ajax({
+                        url: 'assets/js/src/fetchMedicationData.php',
+                        method: 'GET',
+                        success: function(data) {
+                            let cardsHtml = '';
+                            data.forEach(medication => {
+                                cardsHtml += `
+                                    <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
+                                        <div class="card" id="product-card">
+                                            <div class="card-header">${medication.prescription === 'required' ? 'ONLY ALLOW WITH PRESCRIPTION' : ''}</div>
+                                            <img src="${medication.imageLink}" class="card-img-top" alt="${medication.medication}">
+                                            <div class="card-body">
+                                                <a class="card-head" href="#">${medication.medication} ${medication.doseData}</a>
+                                                <p class="card-text">${medication.details}</p>
+                                                <div class="d-flex">
+                                                    <p class="p-price">Rs. ${Math.floor(Math.random() * 1500) + 500}.00</p>
+                                                    <p class="p-discount">Rs. ${Math.floor(Math.random() * 500) + 1000}.00</p>
+                                                </div>
+                                                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
+                                                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            $('#medication-cards').html(cardsHtml);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                });
+            </script>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row card-row" id="medication-cards">
-          <!-- Cards will be injected here by JavaScript -->
-    </div>
-    <div>
-      <script>
-          $(document).ready(function() {
-              $.ajax({
-                  url: 'assets/js/src/fetchMedicationData.php',
-                  method: 'GET',
-                  success: function(data) {
-                      let cardsHtml = '';
-                      data.forEach(medication => {
-                          cardsHtml += `
-                              <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-                                  <div class="card" id="product-card">
-                                      <div class="card-header">${medication.prescription === 'required' ? 'ONLY ALLOW WITH PRESCRIPTION' : ''}</div>
-                                      <img src="${medication.imageLink}" class="card-img-top" alt="${medication.medication}">
-                                      <div class="card-body">
-                                          <a class="card-head" href="#">${medication.medication} ${medication.doseData}</a>
-                                          <p class="card-text">${medication.details}</p>
-                                          <div class="d-flex">
-                                              <p class="p-price">Rs. ${Math.floor(Math.random() * 1500) + 500}.00</p>
-                                              <p class="p-discount">Rs. ${Math.floor(Math.random() * 500) + 1000}.00</p>
-                                          </div>
-                                          <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                                          <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-                                      </div>
-                                  </div>
-                              </div>
-                          `;
-                      });
-                      $('#medication-cards').html(cardsHtml);
-                  },
-                  error: function(xhr, status, error) {
-                      console.error(error);
-                  }
-              });
-          });
-      </script>
     </div>
   <footer>
     <div class="container-xxl">

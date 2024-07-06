@@ -29,6 +29,6 @@ def display_medications(file_path):
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-	file_path = 'medicationsList.xlsx'
+	file_path = 'tests\mongoDB_Tests\medicationsList.xlsx'
 	display_medications(file_path)
 
