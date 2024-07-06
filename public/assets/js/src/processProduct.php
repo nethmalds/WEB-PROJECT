@@ -8,21 +8,22 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $currentDateTime = date('Y-m-d H:i:s');
 
 require '../../../../vendor/autoload.php';
-
+session_start();
 $mongoUri = "mongodb://localhost:27017";
 $dbName = "MEDIX";
-$collectionName = "cart";
+$collectionName = "cartItems";
 
 try {
     $mongoClient = new MongoDB\Client($mongoUri);
     $db = $mongoClient->$dbName;
     $collection = $db->$collectionName;
 
+
     $document = array(
         'productID' => $_POST['productID'],
         'productName' => $_POST['productName'],
         'userID' => $_POST['userID'],
-        'buyOrCart' => $_POST['buyOrCart']
+        'buyOrCart' => $_POST['orderStat']
     );
 
     $collection->insertOne($document);

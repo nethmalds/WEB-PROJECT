@@ -24,7 +24,7 @@ function checkUserStatus() {
                     window.location.href = "Home.html";
                     // alert("Welcome Back, " + userEmail + " !");
                 } else if (window.location.pathname.includes("Home.html")) {
-                    alert("Welcome Back "+ userEmail + " !");
+                    alert("Welcome Back "+ userEmail);
                     $("#UserAcc").text("YOUR PROFILE");
                     document.getElementById("setUserStat").value = userID;
                 }
