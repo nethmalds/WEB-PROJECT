@@ -94,10 +94,12 @@
           <div class="form-group d-flex">
             <div class="col-6">
             <label class="additional" id="retriveName" value="Null"></label>
+            <label class="additional" id="setUserStat" value="Null"></label>
             <label class="additional" id="retriveUserID" value="Null"></label>
-            <label class="additional" id="city" value="Null"></label>
+            <label class="additional" id="retrieveItemID" value="Null"></label>
+            <!-- <label class="additional" id="city" value="Null"></label>
             <label class="additional" id="address" value="Null"></label>
-            <label class="additional" id="email" value="Null"></label>
+            <label class="additional" id="email" value="Null"></label> -->
             <label class="additional" id="phone" value="Null"></label>
             <p class="summary-header">Shipping Details</p>
             <input type="text" class="form-control" id="name" placeholder="Enter Name">
@@ -175,7 +177,7 @@
                               console.log(data.error);
                           } else {
                               document.getElementById('itemName').innerText = data.itemName;
-                              // document.getElementById('itmPrice').innerText = data.price;
+                              document.getElementById('retrieveItemID').value = data.itemID;
                               document.getElementById('setImage').src = data.itemLink;
                               document.getElementById('itmQty').innerText = 1;
                               document.getElementById('amount').innerText = 'Rs.'+data.price+'.00';
