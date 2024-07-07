@@ -24,6 +24,7 @@ if ($result) {
 
     if ($medication) {
         $result->itemName = $medication->medication;
+        $result->itemID = (string)$medication->_id;
         $result->itemLink = $medication->imageLink;
         echo json_encode($result);
     } else {

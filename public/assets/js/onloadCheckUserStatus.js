@@ -27,6 +27,8 @@ function checkUserStatus() {
                     alert("Welcome Back "+ userEmail);
                     $("#UserAcc").text("YOUR PROFILE");
                     document.getElementById("setUserStat").value = userID;
+                } else {
+                    document.getElementById("setUserStat").value = userID;
                 }
             }
         }
