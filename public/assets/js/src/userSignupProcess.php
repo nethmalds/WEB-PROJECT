@@ -27,7 +27,7 @@ try {
     );
 
     $collection->insertOne($document);
-    echo "Payment successfully processed.";
+    echo "Registration Successful.";
 } catch (MongoDB\Driver\Exception\Exception $e) {
     echo "Error: " . $e->getMessage();
 }

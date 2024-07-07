@@ -34,61 +34,51 @@ function saveDataToMongo() {
             window.location.href = "userSignup.html";
         }
     })
-
 }
-
 document.addEventListener('DOMContentLoaded', function() {
     var passError = document.getElementById('passwordError');
     var pass = document.getElementById('password');
     var conPassError= document.getElementById('confirmPasswordError');
-    var conPass = document.getElementById('confirmPassword');   
-    let valid = true;
+    var conPass = document.getElementById('confirmPassword');  
 
     pass.addEventListener('input', function() {
-        if (pass.length < 8) {
+        if (pass.value.length < 8) {
             passError.textContent = "Password must be at least 8 characters long";
-            valid = false;
-        } else {
-            passError.textContent = "";
-        }
-    });
-    pass.addEventListener('input', function() {
-        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-        if (!regex.test(pass)) {
-            passError.textContent = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
-            valid = false;
-        } else {
-            passError.textContent = "";
-        }
-    });
-    pass.addEventListener('input', function() {
-        if(pass.length > 20)
-        {
+        } else if (pass.value.length > 20) {
             passError.textContent = "Password must be less than 20 characters long";
-            valid = false;
-        }
-        else {
-            passError.textContent = "";
+        } else {
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!regex.test(pass.value)) {
+                passError.textContent = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+            } else {
+                passError.textContent = "";
+            }
         }
     });
+
     conPass.addEventListener('input', function() {
-        if (conPass.value != pass.value) {
+        if (conPass.value !== pass.value) {
             conPassError.textContent = "Passwords do not match";
-            valid = false;
-        }
-        else {
+        } else {
             conPassError.textContent = "";
         }
     });
-    // document.getElementById('signupBtn').addEventListener('submit', function(event) {
-    //     if (!valid) {
-    //         event.preventDefault();
-    //         alert("Invalid Fail");
-    //     }
+
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        var valid = passError.textContent === "" && conPassError.textContent === "";
+        if (!valid) {
+            event.preventDefault();
+            alert("Invalid Input, Please check the fields and try again.");
+        } else {
+            saveDataToMongo();
+            event.preventDefault();
+        }
+    });
+});
+
+
     //     // Send an Ajax to the server to check if the email is already in use
     //     // var email = document.getElementById('email').value;
     //     // console.log(email);
     //     alert("Debug");
-    // });
-
-});
+    //     $.ajax({})
