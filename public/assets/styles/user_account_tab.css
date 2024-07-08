@@ -108,6 +108,19 @@ body{
   background-color: #000629;
   color: white;
 }
+
+#gotoOrders2{
+  display: block;
+  background-color: #450000;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 20px;
+  margin-left: 30%;
+}
+#gotoOrders2:hover{
+  background-color: #290000;
+  color: white;
+}
 .details{
   margin-top: 20px;
   margin-left: 10px;
