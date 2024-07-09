@@ -68,6 +68,7 @@ function uploadDataToMongo() {
         success: function(response) {
             console.log("Payment Succeeded: " + response);
             alert("Payment Accepted !, Thank you for using our services...");
+            window.location.href = "Home.html";
             // clearCart();
             // window.location.href = 'index.html'; // Redirect user after successful payment
         },
