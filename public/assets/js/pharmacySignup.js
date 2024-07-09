@@ -1,11 +1,12 @@
+
 function saveDataToMongo() {
     let pharmacyName = document.getElementById("pharmacyName").value;
     let ownName = document.getElementById("ownName").value;
     let pharmaPhone = document.getElementById("pharmaPhone").value;
     let ownPhone = document.getElementById("ownPhone").value;
-    let Address = document.getElementById("Addr").value;
-    let Email = document.getElementById("email").value;
-    let Password = document.getElementById("password").value;
+    let Address = document.getElementById("pharmaAddress").value;
+    let Email = document.getElementById("pharmaEmail").value;
+    let Password = document.getElementById("pharmaPassword").value;
     // List the data in the variables
     // console.log(FName);
     // console.log(LName);
@@ -14,7 +15,7 @@ function saveDataToMongo() {
     // alert("Debug Alert");
     $.ajax({
         type: "POST",
-        url: "assets\js\src\pharmacySignup.php",
+        url: "assets/js/src/pharmacySignup.php",
         data: {
             pharmacyName: pharmacyName,
             ownName: ownName,
@@ -38,7 +39,7 @@ function saveDataToMongo() {
 }
 document.addEventListener('DOMContentLoaded', function() {
     var passError = document.getElementById('passwordError');
-    var pass = document.getElementById('password');
+    var pass = document.getElementById('pharmaPassword');
     var conPassError= document.getElementById('confirmPasswordError');
     var conPass = document.getElementById('confirmPassword');  
 
