@@ -96,13 +96,15 @@ body{
   object-fit: cover; /* Ensures the image covers the entire area */
   border: 2px solid #ccc; /* Optional: add a border for visual clarity */
 }
+.profileImageContainer{
+  margin-left: 10%;
+}
 #gotoOrders{
-  display: block;
   background-color: #002e45;
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 20px;
-  margin-left: 30%;
+  margin-left: 23%;
 }
 #gotoOrders:hover{
   background-color: #000629;
@@ -110,12 +112,11 @@ body{
 }
 
 #gotoOrders2{
-  display: block;
   background-color: #450000;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-top: 20px;
-  margin-left: 30%;
+  margin-left: 10%;
 }
 #gotoOrders2:hover{
   background-color: #290000;

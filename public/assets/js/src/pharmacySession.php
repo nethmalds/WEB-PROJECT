@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$response = array(
+$PharmaResponse = array(
     'PharmacyEmail' => isset($_SESSION['PharmacyEmail']) ? $_SESSION['PharmacyEmail'] : '',
     'PharmacyID' => isset($_SESSION['_id']) ? $_SESSION['_id'] : ''
 );
-echo json_encode($response);
+echo json_encode($PharmaResponse);
 ?>

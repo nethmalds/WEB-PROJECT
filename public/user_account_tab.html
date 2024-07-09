@@ -100,11 +100,15 @@
       <p class="mainHeader">User Account</p>
       <div class="col-md-6" id="headerContent">
         <form id="uploadForm">
+          <div class="profileImageContainer">
             <img id="profileImage" src="assets\Images\example man for the profile pic.jpg" alt="Profile Image">
             <input type="file" id="imgInput" accept="image/*">
+          </div>
             <!-- <label class="details">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus commodi adipisci eaque, dolorum alias odit ipsum. Animi harum necessitatibus quo.</label> -->
-            <button type="button" onclick="destroySession()" id="gotoOrders" class="btn">Logout</button>
-            <button type="button" onclick="deleteAccount()" id="gotoOrders2" class="btn">Delete Account</button>
+             <div class="d-flex">
+              <button type="button" onclick="destroySession()" id="gotoOrders" class="btn">Logout</button>
+              <button type="button" onclick="deleteAccount()" id="gotoOrders2" class="btn">Delete Account</button>
+             </div>
         </form>
       </div>
       <div class="col-md-6" id="tables">
@@ -112,28 +116,20 @@
         <table class="table" id="detailsTable">
           <tr>
             <td>Name</td>
-            <td id="tbName">$PLACEHOLDER$</td>
+            <td id="tbName">Loading...</td>
           </tr>
           <tr>
             <td>Date of Birth</td>
-            <td id="tbDOB">$PLACEHOLDER$</td>
+            <td id="tbDOB">Loading...</td>
           </tr>
           <tr>
             <td>Contact Information</td>
-            <td id="tbContact">$PLACEHOLDER$</td>
+            <td id="tbContact">Loading...</td>
           </tr>
           <tr>
             <td>Address</td>
-            <td id="tbAddress">$PLACEHOLDER$</td>
+            <td id="tbAddress">Loading...</td>
           </tr>
-            <tr>
-                <td>Name</td>
-                <td id="tbName">Loading...</td>
-            </tr>
-            <tr>
-                <td>Contact Information</td>
-                <td id="tbContact">Loading...</td>
-            </tr>
         </table>
         <!-- <button class="btn btn-sm" id="editbtn">Edit</button> -->
     </div>    
