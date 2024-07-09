@@ -11,8 +11,10 @@
     <!-- Onload Get User Status Snippet -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/onloadCheckUserStatus.js"></script>
+    <!--<script src="assets\js\onloadCheckPharmacyStatus.js"></script>-->
     <script src="assets/js/ProcessProduct.js"></script>
     <label id="setUserStat" value="NULL"></label>
+    <label id="pharmaStatus" value="NULL"></label>
     <!-- Onload Get User Status Snippert Stop -->
     <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
   </head>
@@ -75,6 +77,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pharmacyLogin.html" id="pharmaAcc">SELLER ACCOUNT</a></li>
               <li><a class="dropdown-item" href="user_account_tab.html" id="UserAcc">CUSTOMER ACCOUNT</a></li>
               <li><a class="dropdown-item" href="">SELLER ACCOUNT</a></li>
             </ul>
@@ -268,7 +271,7 @@
                                               <p class="card-text">${medication.details}</p>
                                               <div class="d-flex">
                                                 <p class="p-discount">Rs. ${Math.floor(Math.random() * 500) + 1000}.00</p>
-                                                  <p class="p-price"></p>
+                                                <p class="p-price"></p>
                                               </div>
                                               <a href="#" class="btn btn-sm btn-card buy-now" data-id="${medication._id}" data-price="${Math.floor(Math.random() * 1500) + 500}">BUY NOW</a>
                                               <a href="#" class="btn btn-sm btn-card add-cart" data-id="${medication._id}" data-price="${Math.floor(Math.random() * 1500) + 500}">ADD CART</a>
