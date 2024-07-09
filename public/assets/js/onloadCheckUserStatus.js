@@ -13,6 +13,10 @@ $(document).ready(function() {
             var userID = response.UserID;
             if (userEmail === "" || userID === "") {
                 $("#UserAcc").text("CUSTOMER ACCOUNT");
+                if (window.location.pathname.includes("payment.html") || window.location.pathname.includes("user_account_tab.html") || window.location.pathname.includes("user_orders.html") ){
+                    alert("Not Logged in, Auto Redirect...");
+                    window.location.href = "LandingPage.html";
+                }
                 // if (window.location.pathname.includes("Home.html")) {
                 //     window.location.href = "LandingPage.html";
                 // }
@@ -83,6 +87,30 @@ function checkPharmaStatus(){
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.error("AJAX request failed: ", textStatus, errorThrown);
+}
+
+function destroySession() {
+    $.ajax({
+        url: "assets/js/src/destroySession.php",
+        type: "POST",
+        data: {destroySession: true},
+        success: function(response) {
+            alert("You Will be logged out from the Website...");
+            window.location.href = "LandingPage.html";
+        }
+    });
+}
+
+
+function deleteAccount() {
+    var userID = document.getElementById("setUserStat").value;
+    $.ajax({
+        url: "assets/js/src/deleteAccount.php",
+        type: "POST",
+        data: {userID: userID},
+        success: function(response) {
+            alert("Your Account has been Deleted. USER:"+userID+" will be logged out from the Website...");
+            window.location.href = "LandingPage.html";
         }
     });
 }

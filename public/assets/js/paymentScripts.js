@@ -66,7 +66,6 @@ function uploadDataToMongo() {
             Status: Status
         },
         success: function(response) {
-            alert(UserID);
             console.log("Payment Succeeded: " + response);
             alert("Payment Accepted !, Thank you for using our services...");
             // clearCart();
