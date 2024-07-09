@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />    
+    <link rel="stylesheet" href="assets/styles/style_admin_dash.css">
+    <link rel="stylesheet" href="Additem.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- aside section start-->
+         <aside>
+                <div class="top">
+                    <div class="logo">
+                    <h2>C <span class="danger">BARBAR</span></h2>
+                    </div>
+                    <div class="close">
+                        <span class="material-symbols-outlined"> close  </span>                    
+                    </div>
+                </div>
+                <!--end top-->
+                <div class="sidebar">
+                    <a href="#" class="active">
+                        <span class="material-symbols-outlined"> person_outline  </span>
+                        <h1>customer</h1>
+                    </a>
+                    <a href="analytics.html">
+                        <span class="material-symbols-outlined"> insights  </span>
+                        <h1>Analytics</h1>
+                    </a>
+                    <a href="#">
+                        <span class="material-symbols-outlined"> mail_outline  </span>
+                        <h1>Messages</h1>
+                    </a>
+                    <a href="#">
+                        <span class="material-symbols-outlined"> receipt_long  </span>
+                        <h1>Products</h1>
+                    </a>
+                    <a href="#">
+                        <span class="material-symbols-outlined"> report_gmailerrorred  </span>
+                        <h1>Reports</h1>
+                    </a>
+                    <a href="#">
+                        <span class="material-symbols-outlined"> settings  </span>
+                        <h1>settings </h1>
+                    </a>
+                    <a href="Additem.html">
+                        <span class="material-symbols-outlined"> add  </span>
+                        <h1>Add Product </h1>
+                    </a>
+                    <a href="#">
+                        <span class="material-symbols-outlined"> logout  </span>
+                        <h1>logout </h1>
+                    </a>
+
+                </div>
+         </aside>
+            <!-- aside section end-->
+             <main>
+                <div class="row">
+                    <div class="col-xxl-3 col-lg-6 col-md-7 col-sm-8 col-9 shadow" id="ADDITEMCARD">
+                        <div class="header d-grid">
+                            <img src="assets\Images\NavBar\Medix logo.png" class="logo" alt="">
+                        </div>
+                        <p class="slogen">Your Ultimate Health-Care Destination!</p>
+                        <p class="topTxt">Get Start Your Journey With Us</p>
+                        <form class="mt-4">
+                            <div class="form-group">
+                                <label for="Item">Item Name</label>
+                                <input type="text" class="form-control" placeholder="Item Name" id="Iname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Quantity">Quantity</label>
+                                <input type="text" class="form-control" placeholder="Quantity" id="quantity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control" placeholder="Price" id="price" required>
+                            </div>
+                            <div class="form-groupDe">
+                                <label for="Addr">Discription</label>
+                                <input type="Addr" class="form-control" placeholder="Enter Description" id="AddDe" required>
+                            </div>
+                            
+                            
+            
+                            <div>
+                                <button type="submit" id="ADDItem" class="btn" >ADD ITEM</button>
+                                
+                            </div>
+                        </form>
+        
+                    </div>
+                  </div>
+
+
+             </main>
+            <script src="assets/js/admin_script.js"></script>
+        </body>
+        </html>
