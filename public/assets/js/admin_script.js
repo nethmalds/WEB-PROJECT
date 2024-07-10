@@ -1,14 +1,4 @@
-session_start();
-function fetchSellerData() {
-    $.ajax({
-        url: 'assets/js/src/PharmacySession.php',
-        method: 'GET',
-        success: function (PharmacyResponse) {
-            $('#SellerName').text(PharmacyResponse.PharmacyEmail);
-        }
-    });
 
-}
 
 function searchCustomers() {
     // Get input value
@@ -41,8 +31,8 @@ new Chart(ctx, {
         datasets: [{
             label: 'SALES',
             data: [12, 19, 3, 5, 2, 3, 10, 15, 20, 25, 30, 35],
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
+            backgroundColor: '#002e45',
+            color: '#002e45',
         }]
     },
     options: {
@@ -54,7 +44,7 @@ new Chart(ctx, {
         plugins: {
             legend: {
                 labels: {
-                    color: 'white' // Color of the legend text
+                    backgroundColor:'#000629' // Color of the legend text
                 }
             }
         }
