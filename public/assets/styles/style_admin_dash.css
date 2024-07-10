@@ -118,16 +118,31 @@ b{
 
 
 /*ASIDE */
+.mainHead{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+}
+.sidebarHead{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 25%;
+}
 
 aside{
     height: 100vh;
 }
 aside .top{
-    background-color: var(--clr-white);
+    background-color: #000629;
     display: flex;
+    margin-top: 25px;
     justify-content: space-around;
     align-items: center;
-    margin-top: 1.4rem;
 }
 
 aside .logo{
