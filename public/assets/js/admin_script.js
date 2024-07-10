@@ -1,3 +1,15 @@
+session_start();
+function fetchSellerData() {
+    $.ajax({
+        url: 'assets/js/src/PharmacySession.php',
+        method: 'GET',
+        success: function (PharmacyResponse) {
+            $('#SellerName').text(PharmacyResponse.PharmacyEmail);
+        }
+    });
+
+}
+
 function searchCustomers() {
     // Get input value
     var input = document.getElementById('searchInput').value.toUpperCase();

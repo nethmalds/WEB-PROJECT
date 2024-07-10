@@ -39,7 +39,7 @@ function checkUserStatus() {
         }
     });
 }
-/*function checkPharmaStatus() {
+function checkPharmaStatus() {
     $.ajax({
         url: "assets/js/src/PharmacySession.php",
         type: "GET",
@@ -49,7 +49,7 @@ function checkUserStatus() {
             var pharmaID = PharmacyResponse.PharmacyID;
             if (pharmaEmail === "" || pharmaID === "") {
                 $("#pharmaAcc").text("SELLER ACCOUNT");
-                if () {
+                if (window.location.pathname.includes("admin_index.html")){
                     window.location.href = "LandingPage.html";
                 }
                 // if (window.location.pathname.includes("Home.html")) {
@@ -57,14 +57,14 @@ function checkUserStatus() {
                 // }
                 document.getElementById("pharmaStatus").value = "";
             } else {
-                $("#pharmaAcc").text("SELLER INTERFACE");
+                $("#pharmaAcc").text("SELLER DASHBOARD").attr("href", "admin_index.html");
                 // Redirect to Home.html if the user in LandingPage.html
                 if (window.location.pathname.includes("pharmacyLogin.html")) {
-                    window.location.href = "Home.html";
+                    window.location.href = "admin_index.html";
                     // alert("Welcome Back, " + userEmail + " !");
-                } else if (window.location.pathname.includes("Home.html")) {
+                } else if (window.location.pathname.includes("admin_index.html")) {
                     alert("Welcome Back "+ pharmaEmail);
-                    $("#pharmaAcc").text("SELLER INTERFACE");
+                    $("#pharmaAcc").text("SELLER DASHBOARD").attr("href", "admin_index.html");
                     document.getElementById("pharmaStatus").value = pharmaID;
                 } else {
                     document.getElementById("pharmaStatus").value = pharmaID;
@@ -73,7 +73,7 @@ function checkUserStatus() {
             console.log(PharmacyResponse);
         }
     });
-}*/
+}
 
 function destroySession() {
     $.ajax({
