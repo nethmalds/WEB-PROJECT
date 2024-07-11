@@ -63,7 +63,9 @@ function checkPharmaStatus() {
                     window.location.href = "admin_index.html";
                     // alert("Welcome Back, " + userEmail + " !");
                 } else if (window.location.pathname.includes("admin_index.html")) {
-                    alert("Welcome Back "+ pharmaEmail);
+                    // alert(PharmacyResponse.PharmacyName)
+                    document.getElementById("SellerName").innerHTML = PharmacyResponse.PharmacyName;
+                    // alert("Welcome Back "+ pharmaEmail);
                     $("#pharmaAcc").text("SELLER DASHBOARD").attr("href", "admin_index.html");
                     document.getElementById("pharmaStatus").value = pharmaID;
                 } else {
