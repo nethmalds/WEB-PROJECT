@@ -9,11 +9,11 @@ $client = new Client("mongodb://localhost:27017");
 $collection = $client->MEDIX->cartItems;
 $medicationsCollection = $client->MEDIX->Medications;
 
-$userId = $_SESSION['UserID']; // Retrieve UserID from session
+$userId = $_SESSION['_id']; // Retrieve UserID from session
 
 $query = [
     'orderStatus' => 'add-cart',
-    'UserID' => $userId // Add UserID to the query
+    '_id' => $userId // Add UserID to the query
 ];
 
 $cursor = $collection->find($query);
