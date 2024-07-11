@@ -77,8 +77,7 @@ function uploadDataToMongo() {
             alert("Fatal Error! Please try again later.");
         }
     });
-    
-
+    clearAllCartItems();
     // alert("Ajax End Reached");
 }
 
