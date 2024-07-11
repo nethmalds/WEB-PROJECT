@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('HTTP/1.1 405 Method Not Allowed');
     echo json_encode(['success' => false, 'message' => 'Method Not Allowed']);
@@ -6,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 require '../../../../vendor/autoload.php';
-session_start();
 
 $email = $_POST['pharmaEmail'];
 $password = $_POST['pharmaPassword'];
@@ -26,6 +26,7 @@ try {
         if ($password == $pharmacy['PharmacyPassword']) {
             $_SESSION['PharmacyEmail'] = $pharmacy['PharmacyEmail'];
             $_SESSION['_id'] = (string)$pharmacy['_id'];
+            $_SESSION['PharmacyName'] = $pharmacy['PharmacyName'];
 
             echo json_encode(['success' => true, 'message' => 'Login successful']);
         } else {
