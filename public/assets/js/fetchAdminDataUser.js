@@ -99,7 +99,7 @@ function editUser(userId, firstName, lastName, email, phone, address) {
                '&phone=' + encodeURIComponent(phone) +
                '&address=' + encodeURIComponent(address);
     xhr.send(data);
-}
+}   
 
 // Call fetchUsers to populate the table initially
 fetchUsers();
