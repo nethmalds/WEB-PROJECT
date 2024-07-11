@@ -10,6 +10,12 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" href="assets\styles\UserCartStyles.css" type="text/css">
     <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
+    <!-- Onload Get User Status Snippet -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/onloadCheckUserStatus.js"></script>
+    <script src="assets/js/ProcessProduct.js"></script>
+    <label id="setUserStat" value="NULL"></label>
+    <!-- Onload Get User Status Snippert Stop -->
 </head>
 <body background="assets\Images\BG\BG image.svg">
     <nav class="navbar shadow fixed-top navbar-expand-lg">
@@ -87,88 +93,10 @@
           </div>
         </div>
       </nav>
-    <div class="container">
-      <p class="text-center" id="mainHead">WELCOME TO YOUR CART</p>
-      <div class="row">
-          <div class="col-6">
-              <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                      <div class="col-4">
-                          <img src="assets\Images\Products\product1.jpg" alt="product-image" class="img-fluid">
-                      </div>
-                      <div class="col-8">
-                          <h5 class="card-title">Product Name</h5>
-                          <p class="card-text" id="cardText">Product Description</p>
-                          <p class="card-text" id="cardText">Price: Rs. 1000.00</p>
-                          <p class="card-text" id="cardText">Quantity: 1</p>
-                          <button class="btn btn-sm btn-primary" id="addBtn">Add Item</button>
-                          <button class="btn btn-sm btn-danger" id="removeBtn">Remove</button>
-                      </div>
-                    </div>
-                </div>
-              </div>
-          </div>
-          <div class="col-6">
-              <div class="card">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-4">
-                              <img src="assets\Images\Products\product1.jpg" alt="product-image" class="img-fluid">
-                          </div>
-                          <div class="col-8">
-                              <h5 class="card-title">Product Name</h5>
-                              <p class="card-text" id="cardText">Product Description</p>
-                              <p class="card-text" id="cardText">Price: Rs. 1000.00</p>
-                              <p class="card-text" id="cardText">Quantity: 1</p>
-                              <button class="btn btn-sm btn-primary" id="addBtn">Add Item</button>
-                              <button class="btn btn-sm btn-danger" id="removeBtn">Remove</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="assets\Images\Products\product1.jpg" alt="product-image" class="img-fluid">
-                        </div>
-                        <div class="col-8">
-                            <h5 class="card-title">Product Name</h5>
-                            <p class="card-text" id="cardText">Product Description</p>
-                            <p class="card-text" id="cardText">Price: Rs. 1000.00</p>
-                            <p class="card-text" id="cardText">Quantity: 1</p>
-                            <button class="btn btn-sm btn-primary" id="addBtn">Add Item</button>
-                            <button class="btn btn-sm btn-danger" id="removeBtn">Remove</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6">
-          <div class="card">
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-4">
-                          <img src="assets\Images\Products\product1.jpg" alt="product-image" class="img-fluid">
-                      </div>
-                      <div class="col-8">
-                          <h5 class="card-title">Product Name</h5>
-                          <p class="card-text" id="cardText">Product Description</p>
-                          <p class="card-text" id="cardText">Price: Rs. 1000.00</p>
-                          <p class="card-text" id="cardText">Quantity: 1</p>
-                          <button class="btn btn-sm btn-primary" id="addBtn">Add Item</button>
-                          <button class="btn btn-sm btn-danger" id="removeBtn">Remove</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
-        <button class="btn" id="checkoutBtn">PROCEED TO CHECKOUT</button>
-      </div>
+    <div class="container" id="cartData">
+      <!-- Cart Items will dynamically added to here -->
     </div>
+    <script src="assets/js/cart.js"></script>
     <footer>
         <div class="container-xxl">
           <div class="row card-row">

@@ -152,11 +152,11 @@
                       <p class="Data" id="itmQty">TODO</p>
                   </div>
                   <div class="paymentDetails__item">
-                      <p class="Topic">Price</p>
+                      <p class="Topic" id="priceTopic">Price</p>
                       <p class="Data" id="amount">TODO</p>
                   </div>
                   <div class="paymentDetails__item">
-                      <p class="Topic">Shipping</p>
+                      <p class="Topic" id="shippingTopic">Shipping</p>
                       <p class="Data" id="shipFee">TODO</p>
                   </div>
                   <div class="paymentDetails__item">
@@ -167,27 +167,72 @@
           </div>
       
           <script>
-              function fetchData() {
-                  var xhr = new XMLHttpRequest();
-                  xhr.open('GET', 'assets/js/src/buyNowFetch.php', true);
-                  xhr.onreadystatechange = function () {
-                      if (xhr.readyState == 4 && xhr.status == 200) {
-                          var data = JSON.parse(xhr.responseText);
-                          if (data.error) {
-                              console.log(data.error);
-                          } else {
-                              document.getElementById('itemName').innerText = data.itemName;
-                              document.getElementById('retrieveItemID').value = data.itemID;
-                              document.getElementById('setImage').src = data.itemLink;
-                              document.getElementById('itmQty').innerText = 1;
-                              document.getElementById('amount').innerText = 'Rs.'+data.price+'.00';
-                              document.getElementById('shipFee').innerText = 'Rs.250';
-                              document.getElementById('totAmount').innerText = 'Rs.'+(parseInt(data.price)+250)+'.00';
-                          }
-                      }
-                  };
-                  xhr.send();
+              function clearAllCartItems() {
+                // Using jQuery for Ajax request
+                $.ajax({
+                    url: 'assets/js/src/clearCartItems.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.error) {
+                            console.log(data.error);
+                        } else {
+                            console.log(data.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Ajax request error:', error);
+                    }
+                });
               }
+
+              function fetchData() {
+              // Check if URL contains ?status=buyaddcart
+                if (window.location.search.includes('status=buyaddcart')) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'assets/js/src/otherCartScript.php', true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            var data = JSON.parse(xhr.responseText);
+                            if (data.error) {
+                                console.log(data.error);
+                            } else {
+                              document.getElementById('itemName').innerText = "All Cart Items";
+                              document.getElementById('setImage').src = "https://icons.iconarchive.com/icons/bootstrap/bootstrap/256/Bootstrap-cart-icon.png";
+                              document.getElementById('itmQty').innerText = data.count;
+                              document.getElementById('totAmount').innerText = 'Rs.' + data.totalAmount + '.00';
+                              //Hide other elements
+                              document.getElementById('amount').style.display = 'none';
+                              document.getElementById('shipFee').style.display = 'none';
+                              document.getElementById('shippingTopic').style.display = 'none';
+                              document.getElementById('priceTopic').style.display = 'none';
+                            }
+                          }
+                    };
+                    xhr.send();
+                } else {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'assets/js/src/buyNowFetch.php', true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            var data = JSON.parse(xhr.responseText);
+                            if (data.error) {
+                                console.log(data.error);
+                            } else {
+                                document.getElementById('itemName').innerText = data.itemName;
+                                document.getElementById('retrieveItemID').value = data.itemID;
+                                document.getElementById('setImage').src = data.itemLink;
+                                document.getElementById('itmQty').innerText = 1;
+                                document.getElementById('amount').innerText = 'Rs.' + data.price + '.00';
+                                document.getElementById('shipFee').innerText = 'Rs.250';
+                                document.getElementById('totAmount').innerText = 'Rs.' + (parseInt(data.price) + 250) + '.00';
+                            }
+                        }
+                    };
+                    xhr.send();
+                }
+          }
+
       
               document.addEventListener('DOMContentLoaded', function() {
                   fetchData();

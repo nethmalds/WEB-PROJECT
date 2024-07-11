@@ -82,7 +82,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="cart" href="user_orders.html">CART
+            <a class="nav-link" id="cart" href="UserCart.html">CART
               <img src="assets\Images\NavBar\cart.svg" class="cart-img" alt="">
               <span class="translate-middle badge" id="Badge">0</span>
             </a>
@@ -314,8 +314,7 @@
                           success: function(response) {
                               console.log('Order added to cart:', response);
                               if (orderStat == "add-cart") {
-                                  // cartCount();
-                                  alert("TODO");
+                                  alert("Item Added To Cart !");
                               } else {
                                   window.location.href = 'payment.html';
                               }
