@@ -31,7 +31,7 @@ new Chart(ctx, {
         datasets: [{
             label: 'SALES',
             data: [12, 19, 3, 5, 2, 3, 10, 15, 20, 25, 30, 35],
-            backgroundColor: '#002e45',
+            backgroundColor: '#00b0ff',
             color: '#002e45',
         }]
     },
