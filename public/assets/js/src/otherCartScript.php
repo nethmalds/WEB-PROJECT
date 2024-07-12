@@ -13,7 +13,7 @@ $userId = $_SESSION['_id']; // Retrieve UserID from session
 
 $query = [
     'orderStatus' => 'add-cart',
-    '_id' => $userId // Add UserID to the query
+    'UserID' => $userId // Add UserID to the query
 ];
 
 $cursor = $collection->find($query);
