@@ -77,11 +77,11 @@
           <a class="nav-link active dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="userLogin.html">CUSTOMER ACCOUNT</a></li>
-            <li><a class="dropdown-item" href="">SELLER ACCOUNT</a></li>
+            <li><a class="dropdown-item" href="pharmacyLogin.html">SELLER ACCOUNT</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="cart" href="#">CART
+          <a class="nav-link" id="cart" href="UserCart.html">CART
             <img src="assets\Images\NavBar\cart.svg" class="cart-img" alt="">
             <span class="translate-middle badge" id="Badge">0</span>
           </a>
@@ -101,7 +101,7 @@
       <div class="col-md-6" id="headerContent">
         <form id="uploadForm">
           <div class="profileImageContainer">
-            <img id="profileImage" src="assets\Images\example man for the profile pic.jpg" alt="Profile Image">
+            <img id="profileImage" src="assets\Images\profileimage placeholder.jpg" alt="Profile Image">
             <input type="file" id="imgInput" accept="image/*">
           </div>
             <!-- <label class="details">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus commodi adipisci eaque, dolorum alias odit ipsum. Animi harum necessitatibus quo.</label> -->
@@ -118,20 +118,20 @@
             <td>Name</td>
             <td id="tbName">Loading...</td>
           </tr>
-          <!-- <tr>
+          <tr>
             <td>Date of Birth</td>
             <td id="tbDOB">Loading...</td>
-          </tr> -->
+          </tr>
           <tr>
             <td>Contact Information</td>
             <td id="tbContact">Loading...</td>
           </tr>
-          <!-- <tr>
+          <tr>
             <td>Address</td>
             <td id="tbAddress">Loading...</td>
-          </tr> -->
+          </tr>
         </table>
-        <!-- <button class="btn btn-sm" id="editbtn">Edit</button> -->
+        <button class="btn btn-sm" id="editbtn">Edit</button>
     </div>    
     </div>
   </div>
@@ -141,15 +141,17 @@
       <p class="personalTxt">Edit Personal Details</p>
       <form id="editForm">
         <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Name">
-          <!-- <label for="birthDate">Date Of Birth:</label>
-          <input type="date" class="form-control" id="birthDate"> -->
+          <label for="name">First Name:</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+          <label for="name">First Name:</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+          <label for="birthDate">Date Of Birth:</label>
+          <input type="text" class="form-control" placeholder="DD/MM/YYYY" id="birthDate">
           <label for="contact">Contact Information:</label>
           <input type="text" class="form-control" id="contact" placeholder="Enter Contact Information">
-          <!-- <label for="address">Address:</label>
-          <input type="text" class="form-control" id="address" placeholder="Enter Address"> -->
-          <input type="submit" class="btn" id="editSavebtn" value="Save">
+          <label for="address">Address:</label>
+          <input type="text" class="form-control" id="address" placeholder="Enter Address">
+          <input type="submit" class="btn" id="editSavebtn" onclick="sendInfoupdate()" value="Save">
         </div>
       </form>
     </div>
@@ -171,12 +173,8 @@
             <td>Password</td>
             <td id="passw">$PLACEHOLDER$</td>
           </tr>
-          <!-- <tr>
-            <td>Two-Factor Authentication</td>
-            <td>$PLACEHOLDER$</td>
-          </tr> -->
         </table>
-        <!-- <button class="btn btn-sm" id="editbtn">Edit</button> -->
+        <a href="user_orders.html"class="btn" id="userOrder" >Your Orders</a>
       </div>
       <!-- <div class="col-md-6" id="tables">
         <h2>Medical Information</h2>

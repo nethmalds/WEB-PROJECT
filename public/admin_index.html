@@ -77,7 +77,7 @@
             </ul>
             </li>
             <li class="nav-item">
-            <a class="nav-link" id="cart" href="user_orders.html">CART
+            <a class="nav-link" id="cart" href="UserCart.html">CART
                 <img src="assets\Images\NavBar\cart.svg" class="cart-img" alt="">
                 <span class="translate-middle badge" id="Badge">0</span>
             </a>
@@ -90,9 +90,9 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container-xxl" id="mainContainer">
     <div class="row">
-        <div class="col-3">
+        <div class="col-xxl-3 col-lg-4 col-sm-5">
             <aside>
                 <div class="top">
                     <div class="logo">
@@ -131,16 +131,15 @@
                         <span class="material-symbols-outlined" id="icon"> add  </span>
                         <h5>Add Product </h5>
                     </a>
-                    <a onclick="destroySession()" id="anchor">
+                    <a onclick="destroySession2()" id="anchor">
                         <span class="material-symbols-outlined" id="icon"> logout  </span>
                         <h5>logout </h5>
                     </a>
                 </div>
             </aside>
         </div>
-        <div class="col-9">
+        <div class="col-xxl-9 col-lg-8 col-sm-6">
             <P class="mainHead">SELLER DASHBOARD</p>
-            <div class="container2">
                 <div class="search-container">
                     <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn search-icon" type="submit" onclick="searchCustomers()">Search</button>
@@ -159,7 +158,6 @@
                     <tbody></tbody>
                 </table>
                 <script src="assets/js/fetchAdminDataUser.js"></script>
-            </div>
             </main>
         </div>
     </div>  
@@ -190,7 +188,7 @@
                 <h6>Info & Our Service</h6>
                 <a href="#" class="footer-link"><small>Seller Center</small></a>
                 <a href="helpcenter.html" class="footer-link"><small>Help Center</small></a>
-                <a href="#" class="footer-link"><small>About Us</small></a>
+                <a href="AboutUs.html" class="footer-link"><small>About Us</small></a>
                 <a href="#" class="footer-link"><small>Contact Us</small></a>
                 <a href="privacypolicy.html" class="footer-link"><small>Privicy & Policy</small></a>
                 <a href="#" class="footer-link"><small>Terms & Conditions</small></a>

@@ -1,4 +1,5 @@
 <?php
+session_name('session1');
 session_start();
 require '../../../../vendor/autoload.php'; // include Composer's autoloader
 

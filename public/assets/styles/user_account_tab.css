@@ -133,6 +133,16 @@ body{
   background-color: #290000;
   color: white;
 }
+#userOrder{
+  background-color: #002e45;
+  margin-top: 2%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+#userOrder:hover{
+  background-color: #000629;
+  color: white;
+}
 .details{
   margin-top: 20px;
   margin-left: 10px;

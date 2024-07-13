@@ -1,32 +1,57 @@
-function fetchMedications() {
+/*$(document).ready(function() {
     $.ajax({
         url: 'assets/js/src/fetchMedications.php',
         method: 'GET',
-        dataType: 'json',
-        success: function(medications) {
-            var container = $('.row');
-            container.empty(); // Clear existing content
-
-            medications.forEach(function(medication) {
-                var card = `<div class="col-6">
+        success: function(data) { // Clear existing content
+            let card = '';
+            data.forEach(medication => {
+                    card += `<div class="col-6">
                     <div class="card">
-                        <img src="${medication.image}" alt="product-image" class="img-fluid" id="productImage">
+                        <img src="${medication.imageLink}" alt="${medication.medication}" class="img-fluid" id="productImage">
                         <div class="card-body">
-                            <h5 class="card-title">${medication.name}</h5>
-                            <p class="card-text">${medication.description}</p>
-                            <p class="card-text">Price: Rs. ${medication.price}</p>
-                            <p class="card-text">Quantity: ${medication.quantity}</p>
+                            <h5 class="card-title">${medication.medication} ${medication.doseData}</h5>
+                            <p class="card-text">${medication.details}</p>
+                            <p class="card-text">Price: Rs.${Math.floor(Math.random() * 500) + 1000}.00</p>
+                            <p class="card-text">Quantity: 1</p>
                             <button class="btn btn-danger" id="removeBtn">Remove</button>
                         </div>
                     </div>
                 </div>`;
-                container.append(card);
             });
-        },
-        error: function(xhr, status, error) {
-            console.error('Error fetching medications:', error);
+            $('#medications').html(card);
         }
     });
-}
+});*/
 
-fetchMedications();
+$(document).ready(function() {
+    $.ajax({
+        url: 'assets/js/src/fetchMedicationData.php',
+        method: 'GET',
+        success: function(data) {
+            let cardsHtml = '';
+            data.forEach(medication => {
+                cardsHtml += `
+                    <div class="col-6">
+                        <div class="card" id="productCard">
+                            <div class="card-body">
+                                <div class ="row">
+                                    <div class="col-5">
+                                        <img src="${medication.imageLink}" class="card-img-top" id="productImage" alt="${medication.medication}">
+                                    </div>
+                                    <div class="col-7">
+                                        <h5 class="card-title">${medication.medication} ${medication.doseData}</h5>
+                                        <p class="card-text">${medication.details}</p>
+                                        <p class="card-text">Price: Rs.${Math.floor(Math.random() * 500) + 1000}.00</p>
+                                        <p class="card-text">Quantity: 1</p>
+                                        <button class="btn mt-3 btn-sm btn-danger" id="removeBtn">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            $('#medications').html(cardsHtml);
+        }           
+    });
+});
