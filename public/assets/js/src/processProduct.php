@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $currentDateTime = date('Y-m-d H:i:s');
 
 require '../../../../vendor/autoload.php';
+session_name('session1');
 session_start();
 $mongoUri = "mongodb://localhost:27017";
 $dbName = "MEDIX";

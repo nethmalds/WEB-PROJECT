@@ -22,6 +22,8 @@ try {
         'UserFirstName' => $_POST['FName'],
         'UserLastName' => $_POST['LName'],
         'UserPhoneNo' => $_POST['PhoneNo'],
+        'UserDOB' => $_POST[''],
+        'UserAddress' => $_POST['Address'],
         'UserEmail' => $_POST['Email'],
         'UserPassword' => $_POST['Password']
     );

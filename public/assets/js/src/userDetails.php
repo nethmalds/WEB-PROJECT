@@ -1,4 +1,5 @@
 <?php
+session_name('session1');
 session_start();
 require '../../../../vendor/autoload.php';
 
@@ -13,9 +14,12 @@ if ($user) {
     echo json_encode([
         'UserFirstName' => $user['UserFirstName'],
         'UserLastName' => $user['UserLastName'],
+        'UserDOB' => $user['UserDOB'],
+        'UserAddress' => $user['UserAddress'],
         'UserPhoneNo' => $user['UserPhoneNo'],
         'UserEmail' => $user['UserEmail'],
-        'UserPassword' => $user['UserPassword']
+        'UserPassword' => $user['UserPassword'],
+        'UserProfileImage' => isset($user['UserProfileImage']) ? $user['UserProfileImage'] : null
     ]);
 } else {
     echo json_encode(['error' => 'User not found']);

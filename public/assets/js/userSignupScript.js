@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             alert("Invalid Input, Please check the fields and try again.");
         } else {
-            saveDataToMongo();
             event.preventDefault();
         }
     });

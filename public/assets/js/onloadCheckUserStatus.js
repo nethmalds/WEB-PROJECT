@@ -19,7 +19,6 @@ function checkUserStatus() {
                 // if (window.location.pathname.includes("Home.html")) {
                 //     window.location.href = "LandingPage.html";
                 // }
-                document.getElementById("setUserStat").value = "";
             } else {
                 $("#UserAcc").text("YOUR INTERFACE");
                 $("#UserAcc").text("YOUR INTERFACE").attr("href", "user_account_tab.html");
@@ -55,7 +54,6 @@ function checkPharmaStatus() {
                 // if (window.location.pathname.includes("Home.html")) {
                 //     window.location.href = "LandingPage.html";
                 // }
-                document.getElementById("pharmaStatus").value = "";
             } else {
                 $("#pharmaAcc").text("SELLER DASHBOARD").attr("href", "admin_index.html");
                 // Redirect to Home.html if the user in LandingPage.html
@@ -82,6 +80,18 @@ function destroySession() {
         url: "assets/js/src/destroySession.php",
         type: "POST",
         data: {destroySession: true},
+        success: function(response) {
+            alert("You Will be logged out from the Website...");
+            window.location.href = "LandingPage.html";
+        }
+    });
+}
+
+function destroySession2() {
+    $.ajax({
+        url: "assets/js/src/pharmacyDestorySession.php",
+        type: "POST",
+        data: {destroySession2: true},
         success: function(response) {
             alert("You Will be logged out from the Website...");
             window.location.href = "LandingPage.html";

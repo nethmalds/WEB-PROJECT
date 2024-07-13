@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 require '../../../../vendor/autoload.php';
+session_name('session1');
 session_start();
 
 $email = $_POST['email'];

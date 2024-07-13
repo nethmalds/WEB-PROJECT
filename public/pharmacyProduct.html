@@ -12,7 +12,6 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />    
     <link rel="stylesheet" href="assets/styles/style_admin_dash.css">
-    <link rel="stylesheet" href="Additem.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -91,9 +90,9 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container-xxl" id="mainContainer">
         <div class="row">
-            <div class="col-3">
+            <div class="col-xxl-3 col-lg-4 col-sm-5">
                 <aside>
                     <div class="top">
                         <div class="logo">
@@ -132,15 +131,15 @@
                             <span class="material-symbols-outlined" id="icon"> add  </span>
                             <h5>Add Product </h5>
                         </a>
-                        <a onclick="destroySession()" id="anchor">
+                        <a onclick="destroySession2()" id="anchor">
                             <span class="material-symbols-outlined" id="icon"> logout  </span>
                             <h5>logout </h5>
                         </a>
                     </div>
                 </aside>
             </div>
-            <div class="col-9">
-                <div class="row">
+            <div class="col-xxl-9 col-lg-8 col-sm-6">
+                <div class="row card-row" id="medications">
                     <script src="assets/js/fetchMedicationsAdmin.js"></script>
                 </div>
             </div>
@@ -170,12 +169,12 @@
                 <div class="col-6">
                     <div class="d-grid me-2">
                     <h6>Info & Our Service</h6>
-                    <a href="#" class="footer-link"><small>Seller Center</small></a>
+                    <a href="pharmacyLogin.html" class="footer-link"><small>Seller Center</small></a>
                     <a href="helpcenter.html" class="footer-link"><small>Help Center</small></a>
-                    <a href="#" class="footer-link"><small>About Us</small></a>
+                    <a href="AboutUs.html" class="footer-link"><small>About Us</small></a>
                     <a href="#" class="footer-link"><small>Contact Us</small></a>
                     <a href="privacypolicy.html" class="footer-link"><small>Privicy & Policy</small></a>
-                    <a href="#" class="footer-link"><small>Terms & Conditions</small></a>
+                    <a href="terms_conditions.html" class="footer-link"><small>Terms & Conditions</small></a>
                     </div>
                 </div>
                 <div class="col-6">
