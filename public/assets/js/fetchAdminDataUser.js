@@ -5,7 +5,7 @@ function fetchUsers() {
         if (xhr.status == 200) {
             var users = JSON.parse(xhr.responseText);
             var tableBody = document.querySelector('#userTable tbody');
-            tableBody.innerHTML = ''; // Clear existing rows
+            tableBody.innerHTML = ''; // Clear the table body before populating it again
 
             users.forEach(function(user) {
                 var userIdAsString = user.ID.toString();
@@ -17,7 +17,7 @@ function fetchUsers() {
                     <td><button class="btn btn-sm edit-btn" data-id="${userIdAsString}">Edit</button></td>
                     <td><button class="btn btn-sm delete-btn" data-id="${userIdAsString}">Delete</button></td>
                 </tr>`;
-                tableBody.innerHTML += row;
+                tableBody.insertAdjacentHTML('beforeend', row);
             });
 
             // Add event listeners for edit buttons
