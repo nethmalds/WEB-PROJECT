@@ -20,6 +20,7 @@ php -S 0.0.0.0:8000 -t public
 4. open browser and type "localhost:8000" on the URL bar.
 
 ## To any inquiry, Contact
+
 | Student Name | Student Mail |
 -------------------------------
 |Dasun Sri Nethmal | - |
