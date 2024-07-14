@@ -2,7 +2,7 @@
 // MongoDB connection
 require '../../../../vendor/autoload.php';
 $mongoClient = new MongoDB\Client("mongodb://localhost:27017");
-$collection = $mongoClient->MEDIX->Medications;
+$collection = $mongoClient->MEDIX->NewMedications;
 
 // Get the form data
 $productName = $_POST['productName'];

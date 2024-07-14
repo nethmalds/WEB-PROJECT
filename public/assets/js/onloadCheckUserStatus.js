@@ -46,6 +46,7 @@ function checkPharmaStatus() {
         success: function(PharmacyResponse) {
             var pharmaEmail = PharmacyResponse.PharmacyEmail;
             var pharmaID = PharmacyResponse.PharmacyID;
+            var pharmaName = PharmacyResponse.PharmacyName;
             if (pharmaEmail === "" || pharmaID === "") {
                 $("#pharmaAcc").text("SELLER ACCOUNT");
                 if (window.location.pathname.includes("admin_index.html")){
@@ -55,6 +56,7 @@ function checkPharmaStatus() {
                 //     window.location.href = "LandingPage.html";
                 // }
             } else {
+                $("#SellerName").text(pharmaName);
                 $("#pharmaAcc").text("SELLER DASHBOARD").attr("href", "admin_index.html");
                 // Redirect to Home.html if the user in LandingPage.html
                 if (window.location.pathname.includes("pharmacyLogin.html")) {
