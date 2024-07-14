@@ -6,6 +6,12 @@
 ```
 composer install
 ```
+> Run the python file in tests/mongoDB_Tests called parseExcel.py. Run it to create the medications database
+```
+pip install pymongo && pip install pandas
+python parseExcel.py
+```
+
 
 1. Navigate to the public folder and open Command Line on that file directory.
 2. Type "php -S 0.0.0.0:8000 -t public" to start the server.
