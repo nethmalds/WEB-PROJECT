@@ -1,28 +1,38 @@
+Here's the fixed markdown:
+
 # HOW TO START THE WEBSITE
 
-* Composer, php and mongoDB is Reuqired for this to work! *
+*Composer, PHP, and MongoDB are required for this to work!*
 
-> Install Required Packages
-```
+## Install Required Packages
+
+```sh
 composer install
 ```
-> Run the python file in tests/mongoDB_Tests called parseExcel.py. Run it to create the medications database
-```
-pip install pymongo && pip install pandas
+
+## Run the Python Script to Create the Medications Database
+
+Navigate to the `tests/mongoDB_Tests` directory and run `parseExcel.py`:
+
+```sh
+pip install pymongo pandas
 python parseExcel.py
 ```
-> Initialize the Local Web server
-1. Navigate to the public folder and open Command Line on that file directory.
-2. Code required to start the server :
-  ```
-php -S 0.0.0.0:8000 -t public
-  ```
-4. open browser and type "localhost:8000" on the URL bar.
 
-## To any inquiry, Contact
+## Initialize the Local Web Server
 
-| Student Name | Student Mail |
--------------------------------
-|Dasun Sri Nethmal | - |
-|Ometh Abeyrathne | mowbabeyrathne@students.nsbm.ac.lk|
-------------------------------
+1. Navigate to the `public` folder and open Command Line in that directory.
+2. Start the server with the following command:
+
+   ```sh
+   php -S 0.0.0.0:8000 -t public
+   ```
+
+3. Open your browser and go to `localhost:8000`.
+
+## For Inquiries, Contact
+
+| Student Name       | Student Mail                              |
+|--------------------|-------------------------------------------|
+| Dasun Sri Nethmal  | -                                         |
+| Ometh Abeyrathne   | mowbabeyrathne@students.nsbm.ac.lk        |
