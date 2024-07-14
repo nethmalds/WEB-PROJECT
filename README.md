@@ -1,5 +1,3 @@
-Here's the fixed markdown:
-
 # HOW TO START THE WEBSITE
 
 *Composer, PHP, and MongoDB are required for this to work!*
