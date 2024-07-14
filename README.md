@@ -32,5 +32,5 @@ python parseExcel.py
 
 | Student Name       | Student Mail                              |
 |--------------------|-------------------------------------------|
-| Dasun Sri Nethmal  | -                                         |
+| Dasun Sri Nethmal  | gddsnethmal@students.nsbm.ac.lk           |
 | Ometh Abeyrathne   | mowbabeyrathne@students.nsbm.ac.lk        |
