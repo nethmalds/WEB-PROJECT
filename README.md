@@ -19,7 +19,7 @@ python parseExcel.py
 
 ## Initialize the Local Web Server
 
-1. Navigate to the `public` folder and open Command Line in that directory.
+1. Navigate to the project root
 2. Start the server with the following command:
 
    ```sh
